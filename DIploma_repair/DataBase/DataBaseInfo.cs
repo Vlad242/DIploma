@@ -37,7 +37,8 @@
         public string getConnectInfo()
         {
             return "server=" + this.serverName + ";user=" + this.userName +
-                   ";Charset=" + this.charset + ";database=" + this.databaseName +
+                   ";charset=" + this.charset + ";database=" + this.databaseName +
+                   ";port=" + this.port + ";password=" + this.userPassword + ";";
         }
     }
 }

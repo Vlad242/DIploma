@@ -9,3 +9,5 @@ C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repai
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.csproj.CoreCompileInputs.cache
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.exe
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.pdb
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\bin\Debug\MySql.Data.dll
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\bin\Debug\CryptoMD5_XOR.dll
