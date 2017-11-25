@@ -67,6 +67,7 @@
             this.checkBox3.Text = "Показати пароль";
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox3.UseVisualStyleBackColor = false;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // comboBox1
             // 

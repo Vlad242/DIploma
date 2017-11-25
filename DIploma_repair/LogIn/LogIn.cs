@@ -47,5 +47,17 @@ namespace DIploma_repair.LogIn
                     }
             }
         }
+
+        private void checkBox3_CheckedChanged(object sender, System.EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                textBox2.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBox2.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
