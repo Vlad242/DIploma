@@ -57,6 +57,8 @@ namespace DIploma_repair.LogIn
             ////////////////Login from users
             try
             {
+                comboBox1.Items.Clear();
+
                 MySqlCommand cmd = new MySqlCommand
                 {
                     Connection = conn,
@@ -205,6 +207,17 @@ namespace DIploma_repair.LogIn
             else
             {
                 return false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                conn.Close();
+                UserRegister register = new UserRegister();
+                register.Show();
+                this.Hide();
             }
         }
     }

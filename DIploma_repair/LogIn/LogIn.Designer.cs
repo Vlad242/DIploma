@@ -104,6 +104,7 @@
             this.checkBox2.TabIndex = 18;
             this.checkBox2.Text = "Не зареєстровані?";
             this.checkBox2.UseVisualStyleBackColor = false;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // textBox2
             // 
