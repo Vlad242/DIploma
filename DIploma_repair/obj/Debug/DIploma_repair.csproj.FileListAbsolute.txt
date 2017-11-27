@@ -13,3 +13,6 @@ C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\bin\Debug\MySql.Data.dl
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\bin\Debug\CryptoMD5_XOR.dll
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.LogIn.UserRegister.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.UserRoom.resources
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.Services.resources
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.NewUserOrder.resources
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.OrderList.resources

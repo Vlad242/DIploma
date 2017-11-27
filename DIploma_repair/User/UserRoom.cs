@@ -10,6 +10,7 @@ namespace DIploma_repair.User
     {
         private string Login;
         public MySqlConnection conn;
+        private bool CloseFlag = false;
 
         public UserRoom(string login)
         {
@@ -35,41 +36,42 @@ namespace DIploma_repair.User
 
         private void UserRoom_Load(object sender, EventArgs e)
         {
-           
             try
             {
-                MySqlCommand cmd2 = new MySqlCommand();
-                cmd2.Connection = conn;
-                //////////////////////////
-                cmd2.CommandText = string.Format("Select User_name, User_surname, User_fname, Birthdate, Phone, Adress, Email FROM Users Where Login = '" + Login + "';");
+                MySqlCommand cmd2 = new MySqlCommand
+                {
+                    Connection = conn,
+                    CommandText = string.Format("Select User_name, User_surname, User_fname, Birthdate, Phone, Adress, Email FROM Users Where Login = '" + Login + "';")
+                };
                 MySqlDataReader reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
                     this.Text = "Кабінет користувача " + reader.GetString(0) + " " + reader.GetString(1);
-                    label1.Text += "Ім'я: " + reader.GetString(0);
-                    label2.Text += "Прізвище: " + reader.GetString(1);
-                    label3.Text += "По батькові: " + reader.GetString(2);
-                    label4.Text += "Дата народження: " + reader.GetString(3);
-                    label5.Text += "Номер телефону: " + reader.GetString(4);
-                    label6.Text += "Адреса: " + reader.GetString(5);
-                    label7.Text += "E-mail: " + reader.GetString(6);
+                    label1.Text = "Ім'я: " + reader.GetString(0);
+                    label2.Text = "Прізвище: " + reader.GetString(1);
+                    label3.Text = "По батькові: " + reader.GetString(2);
+                    label4.Text = "Дата народження: " + reader.GetString(3).Remove(10); ;
+                    label5.Text = "Номер телефону: " + reader.GetString(4);
+                    label6.Text = "Адреса: " + reader.GetString(5);
+                    label7.Text = "E-mail: " + reader.GetString(6);
                 }
                 reader.Close();
 
-            
-                MySqlCommand cmd1 = new MySqlCommand();
-                cmd1.Connection = conn;
-                //////////////////////////
-                cmd1.CommandText = string.Format("SELECT COUNT(Order_id) FROM Orders WHERE User_id = (SELECT User_id FROM Users WHERE Login = '"+ Login +"');");
+
+                MySqlCommand cmd1 = new MySqlCommand
+                {
+                    Connection = conn,
+                    CommandText = string.Format("SELECT COUNT(Order_id) FROM Orders WHERE User_id = (SELECT User_id FROM Users WHERE Login = '" + Login + "');")
+                };
                 MySqlDataReader reader2 = cmd1.ExecuteReader();
                 while (reader2.Read())
                 {
-                    label9.Text += reader2.GetString(0);
+                    label9.Text = reader2.GetString(0);
                 }
                 reader2.Close();
                 
                 dataGridView1.Columns.Clear();
-                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Model on (Orders.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login= '"+Login+"');", conn);
+                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Model on (Orders.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login= '"+Login+"') limit 5;", conn);
                 DataSet ds = new DataSet();
                 mda.Fill(ds, "Orders");
                 dataGridView1.DataSource = ds.Tables["Orders"];
@@ -82,8 +84,7 @@ namespace DIploma_repair.User
                 dataGridView1.Columns[3].HeaderText = "Дата замовлення";
                 dataGridView1.Columns[4].HeaderText = "Статус замовлення";
 
-                dataGridView1.AutoSize = true;
-                dataGridView1.AutoResizeColumns();
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 for (int i = 0; i< dataGridView1.Rows.Count; i++)
                 {
@@ -121,17 +122,29 @@ namespace DIploma_repair.User
 
         private void UserRoom_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (true)
-            {
                 conn.Close();
                 LogIn.LogIn l = new LogIn.LogIn();
                 l.Show();
                 this.Dispose();
-            }
-            else
-            {
+        }
 
-            }
+        private void ServicesList(object sender, EventArgs e)
+        {
+            Services s = new Services(Login);
+            s.Show();
+            this.Dispose();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            UserRoom_Load(null,null);
+        }
+
+        private void NewActionClick(object sender, EventArgs e)
+        {
+            NewUserOrder userOrder = new NewUserOrder(Login);
+            userOrder.Show();
+            this.Dispose();
         }
     }
 }

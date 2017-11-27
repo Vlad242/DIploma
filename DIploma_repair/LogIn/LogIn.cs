@@ -220,5 +220,10 @@ namespace DIploma_repair.LogIn
                 this.Hide();
             }
         }
+
+        private void LogIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

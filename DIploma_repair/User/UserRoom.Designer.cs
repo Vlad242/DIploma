@@ -41,13 +41,14 @@
             this.вийтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.провестиЗаняттяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.діїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новеЗамовленняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокСервісівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.новеЗамовленняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокСервісівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -166,12 +167,26 @@
             this.діїToolStripMenuItem.Size = new System.Drawing.Size(33, 20);
             this.діїToolStripMenuItem.Text = "Дії";
             // 
+            // новеЗамовленняToolStripMenuItem
+            // 
+            this.новеЗамовленняToolStripMenuItem.Name = "новеЗамовленняToolStripMenuItem";
+            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.новеЗамовленняToolStripMenuItem.Text = "Нове замовлення";
+            this.новеЗамовленняToolStripMenuItem.Click += new System.EventHandler(this.NewActionClick);
+            // 
+            // списокСервісівToolStripMenuItem
+            // 
+            this.списокСервісівToolStripMenuItem.Name = "списокСервісівToolStripMenuItem";
+            this.списокСервісівToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.списокСервісівToolStripMenuItem.Text = "Список сервісів";
+            this.списокСервісівToolStripMenuItem.Click += new System.EventHandler(this.ServicesList);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(282, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(505, 236);
+            this.groupBox2.Size = new System.Drawing.Size(677, 236);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Замовлення";
@@ -182,7 +197,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(482, 208);
+            this.dataGridView1.Size = new System.Drawing.Size(657, 208);
             this.dataGridView1.TabIndex = 0;
             // 
             // menuStrip1
@@ -193,7 +208,7 @@
             this.вийтиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(792, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(965, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -202,7 +217,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(12, 216);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(264, 47);
+            this.groupBox3.Size = new System.Drawing.Size(205, 47);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Всього замовлень";
@@ -215,25 +230,23 @@
             this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 5;
             // 
-            // новеЗамовленняToolStripMenuItem
+            // button1
             // 
-            this.новеЗамовленняToolStripMenuItem.Name = "новеЗамовленняToolStripMenuItem";
-            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.новеЗамовленняToolStripMenuItem.Text = "Нове замовлення";
-            // 
-            // списокСервісівToolStripMenuItem
-            // 
-            this.списокСервісівToolStripMenuItem.Name = "списокСервісівToolStripMenuItem";
-            this.списокСервісівToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.списокСервісівToolStripMenuItem.Text = "Список сервісів";
-            this.списокСервісівToolStripMenuItem.Click += new System.EventHandler(this.ServicesList);
+            this.button1.Location = new System.Drawing.Point(223, 220);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 43);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // UserRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(792, 270);
+            this.ClientSize = new System.Drawing.Size(965, 270);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -277,5 +290,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripMenuItem новеЗамовленняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокСервісівToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
