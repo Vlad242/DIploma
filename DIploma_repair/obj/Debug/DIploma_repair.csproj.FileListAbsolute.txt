@@ -16,3 +16,4 @@ C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repai
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.Services.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.NewUserOrder.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.OrderList.resources
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.CurrentOrderInfo.resources

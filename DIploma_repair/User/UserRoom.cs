@@ -10,7 +10,6 @@ namespace DIploma_repair.User
     {
         private string Login;
         public MySqlConnection conn;
-        private bool CloseFlag = false;
 
         public UserRoom(string login)
         {
@@ -71,7 +70,7 @@ namespace DIploma_repair.User
                 reader2.Close();
                 
                 dataGridView1.Columns.Clear();
-                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Model on (Orders.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login= '"+Login+"') limit 5;", conn);
+                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Model on (Orders.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login= '"+Login+"') limit 8;", conn);
                 DataSet ds = new DataSet();
                 mda.Fill(ds, "Orders");
                 dataGridView1.DataSource = ds.Tables["Orders"];
@@ -85,38 +84,36 @@ namespace DIploma_repair.User
                 dataGridView1.Columns[4].HeaderText = "Статус замовлення";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                for (int i = 0; i< dataGridView1.Rows.Count; i++)
-                {
-                    switch (dataGridView1.Rows[i].Cells[4].Value)
-                    {
-                        case "Order processing":
-                            {
-                                dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Orange;
-                                break;
-                            }
-                        case "Waiting for connection":
-                            {
-                                dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Orange;
-                                break;
-                            }
-                        case "Complete":
-                            {
-                                dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Green;
-                                break;
-                            }
-                        case "In the process of repair":
-                            {
-                                dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Cyan;
-                                break;
-                            }
-                    }
-                }
-
+                ReColorGrid();
             }
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void ReColorGrid()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                switch (dataGridView1.Rows[i].Cells[4].Value)
+                {
+                    case "Order processing":
+                        {
+                            dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Orange;
+                            break;
+                        }
+                    case "Complete":
+                        {
+                            dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Green;
+                            break;
+                        }
+                    case "In the process of repair":
+                        {
+                            dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Cyan;
+                            break;
+                        }
+                }
             }
         }
 
@@ -145,6 +142,18 @@ namespace DIploma_repair.User
             NewUserOrder userOrder = new NewUserOrder(Login);
             userOrder.Show();
             this.Dispose();
+        }
+
+        private void OrderListClick(object sender, EventArgs e)
+        {
+            OrderList order = new OrderList(Login);
+            order.Show();
+            this.Dispose();
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ReColorGrid();
         }
     }
 }
