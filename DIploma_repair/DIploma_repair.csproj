@@ -77,6 +77,9 @@
     <Compile Include="LogIn\UserRegister.Designer.cs">
       <DependentUpon>UserRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mailer\Generator.cs" />
+    <Compile Include="Mailer\Mailer.cs" />
+    <Compile Include="Mailer\MailerConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\CurrentOrderInfo.cs">

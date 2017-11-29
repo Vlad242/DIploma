@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -367,6 +366,7 @@ namespace DIploma_repair.User
                     servPrice += item;
                 }
                 textBox3.Text = servPrice.ToString();
+                button2.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -396,8 +396,8 @@ namespace DIploma_repair.User
                         cmd = new MySqlCommand(sql, conn);
                         cmd.ExecuteNonQuery();
                     }
-
-                    MessageBox.Show("Order created, current status - 'Order processing'!(1)");
+                    Send();
+                    MessageBox.Show("Заявку прийнято!");
                     this.Close();
                 }
                 else
@@ -410,8 +410,8 @@ namespace DIploma_repair.User
                         textBox2.Text + ",'" + richTextBox1.Text + "','" + numericUpDown1.Value + "','" + textBox3.Text + "');";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Order created, current status - 'Order processing'!(2)");
+                    Send();
+                    MessageBox.Show("Заявку прийнято!");
                     this.Close();
                 }
 
@@ -420,6 +420,42 @@ namespace DIploma_repair.User
             {
                 MessageBox.Show("Please check required fiqlds mark * !");
             }
+        }
+
+        private void Send()
+        {
+            //////////////////get_orderID
+            int orderId = 0;
+            MySqlCommand cmd1 = new MySqlCommand
+            {
+                Connection = conn,
+                CommandText = string.Format("SELECT MAX(Order_id) FROM Orders;")
+            };
+            MySqlDataReader reader = cmd1.ExecuteReader();
+            while (reader.Read())
+            {
+                orderId = reader.GetInt32(0);
+            }
+            reader.Close();
+            /////////////////////USer Email
+            string userMail = "";
+            cmd1 = new MySqlCommand
+            {
+                Connection = conn,
+                CommandText = string.Format("SELECT Email FROM Users WHERE Login='" + Login + "';")
+            };
+            reader = cmd1.ExecuteReader();
+            while (reader.Read())
+            {
+                userMail = reader.GetString(0);
+            }
+            reader.Close();
+
+            Mailer.Generator generator = new Mailer.Generator();
+            string body = generator.GenerateBody(Login, orderId, "ServiCEntre");
+            string subject = generator.GenerateSubject("ServiCEntre", orderId);
+            Mailer.Mailer mailer = new Mailer.Mailer();
+            mailer.SendMail(userMail, "example@gmail.com", "", subject, body);
         }
 
         private bool AllFieldsAreFull()
