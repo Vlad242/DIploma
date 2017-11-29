@@ -11,10 +11,10 @@ namespace DIploma_repair.Worker
         private string Login;
         public MySqlConnection conn;
 
-        public WorkerRoom(string Login)
+        public WorkerRoom(string login)
         {
             InitializeComponent();
-            this.Login = Login;
+            this.Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
             conn = new MySqlConnection(dataBase.getConnectInfo());
             conn.Open();
@@ -145,7 +145,7 @@ namespace DIploma_repair.Worker
 
         private void Exit(object sender, EventArgs e)
         {
-            conn.Close();
+            this.Dispose();
             Application.Exit();
         }
 
@@ -154,6 +154,13 @@ namespace DIploma_repair.Worker
             conn.Close();
             WOrderList wOrderList = new WOrderList(Login);
             wOrderList.Show();
+            this.Dispose();
+        }
+
+        private void OrderDetail(object sender, EventArgs e)
+        {
+            OrderDetail detail = new Worker.OrderDetail(Login);
+            detail.Show();
             this.Dispose();
         }
     }

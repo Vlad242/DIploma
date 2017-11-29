@@ -2,7 +2,6 @@ C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\bin\Debug\DIploma_repai
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\bin\Debug\DIploma_repair.exe
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\bin\Debug\DIploma_repair.pdb
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.csprojResolveAssemblyReference.cache
-C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.Form1.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.LogIn.LogIn.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.Properties.Resources.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.csproj.GenerateResource.Cache
@@ -19,3 +18,5 @@ C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repai
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.User.CurrentOrderInfo.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.Worker.WorkerRoom.resources
 C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.Worker.WOrderList.resources
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.Worker.WorkOrder.resources
+C:\Users\asus\source\repos\DIploma_repair\DIploma_repair\obj\Debug\DIploma_repair.Worker.OrderDetail.resources

@@ -241,13 +241,22 @@ namespace DIploma_repair.Worker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            WorkOrder workOrder = new WorkOrder(Login, (int)dataGridView1.CurrentRow.Cells[0].Value);
-            workOrder.Show();
-            this.Dispose();
+            if (dataGridView1.CurrentRow.Cells[5].Value.ToString() != "Complete")
+            {
+                conn.Close();
+                WorkOrder workOrder = new WorkOrder(Login, (int)dataGridView1.CurrentRow.Cells[0].Value);
+                workOrder.Show();
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("This order has already been completed!");
+            }
         }
 
         private void WOrderList_FormClosing(object sender, FormClosingEventArgs e)
         {
+            conn.Close();
             WorkerRoom room = new WorkerRoom(Login);
             room.Show();
             this.Dispose();

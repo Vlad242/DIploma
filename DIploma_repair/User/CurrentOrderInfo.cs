@@ -41,7 +41,7 @@ namespace DIploma_repair.User
                     label13.Text = "Сервіс:";
                     label14.Text = "Замовлення обслуговує:";
                     label15.Text = "Офіс:";
-                    label16.Text = "Ваш пристрі:";
+                    label16.Text = "Ваш пристрій:";
                     label17.Text = "Серійний номер:";
                     label18.Text = "Оцінка стану:";
                     label19.Text = "Загальна ціна замовлення:";

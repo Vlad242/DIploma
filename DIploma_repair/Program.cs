@@ -13,7 +13,7 @@ namespace DIploma_repair
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DIploma_repair.LogIn.LogIn()) ;
+            Application.Run(new DIploma_repair.LogIn.LogIn());
         }
     }
 }
