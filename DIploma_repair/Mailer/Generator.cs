@@ -80,7 +80,7 @@ namespace DIploma_repair.Mailer
                 reader.Close();
 
                 result = "Шановний користувачу " + userName + "." + "<br>" +
-                                "Ваше замовлення #'" + order_id + "' зареєстровано в базі системи, статус засовлення " + status_name + "." + "<br>" +
+                                "Ваше замовлення #'" + order_id + "' зареєстровано в базі системи, статус замовлення " + status_name + "." + "<br>" +
                                 "Деталі замовлення:" + "<br>" +
                                 "Сервіс: " + service_name + ";" + "<br>" +
                                 "Пристрій: " + Item_name + " " + M_name + " " + model_name + " serial:" + serial_name + ";" + "<br>" +
@@ -100,10 +100,10 @@ namespace DIploma_repair.Mailer
 
                 if (detail.Count > 0)
                 {
-                    result += "Прайс лист" + "<br>";
+                    result += "Прайс лист:" + "<br>";
                     foreach (var item in detail)
                     {
-                        result += item + "<br>";
+                        result += item + ";" + "<br>";
                     }
                 }
                 result += "Загальна ціна замовлення: " + order_price + ";" + "<br>" +
@@ -111,9 +111,9 @@ namespace DIploma_repair.Mailer
                     "Дякуємо, що скористалися послугами нашої компанії!" + "<br>" +
                     "Додаткова інформація доступна в додатку." + "<br>" +
                     "Телефон майстра: " + worker_phone + ";" + "<br>" +
-                    "Електронна пошта: " + mail + " ;" + "<br>" +
+                    "Електронна пошта: " + mail + ";" + "<br>" +
                     "Телефон для довідки: 937-99-92" + "<br>" + "<br>" +
-                    "З повагою команда " + ComandName + "! :)";
+                    "З повагою команда " + ComandName + " ! :)";
 
             }
             catch (Exception ex)

@@ -112,11 +112,23 @@
     <Compile Include="User\UserRoom.Designer.cs">
       <DependentUpon>UserRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Worker\WOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\WOrderList.Designer.cs">
+      <DependentUpon>WOrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Worker\WorkerRoom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Worker\WorkerRoom.Designer.cs">
       <DependentUpon>WorkerRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\WorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\WorkOrder.Designer.cs">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -150,6 +162,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserRoom.resx">
       <DependentUpon>UserRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\WOrderList.resx">
+      <DependentUpon>WOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\WorkerRoom.resx">
+      <DependentUpon>WorkerRoom.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
