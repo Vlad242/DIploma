@@ -22,7 +22,7 @@ namespace DIploma_repair.Worker
             Login = login;
             Index = index;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
             richTextBox1.ReadOnly = true;
             richTextBox2.ReadOnly = true;
@@ -120,7 +120,7 @@ namespace DIploma_repair.Worker
             this.Dispose();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             try
             { 
@@ -144,7 +144,7 @@ namespace DIploma_repair.Worker
                 }
                
             }
-            catch(Exception ex)
+            catch(Exception)
             {
             }
         }
@@ -173,7 +173,7 @@ namespace DIploma_repair.Worker
             MessageBox.Show("Order complete!");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -204,15 +204,10 @@ namespace DIploma_repair.Worker
                 WorkOrder_Load(null, null);
                 comboBox1.SelectedIndex = 0;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
 
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

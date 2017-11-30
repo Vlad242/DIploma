@@ -20,7 +20,7 @@ namespace DIploma_repair.Admin
             InitializeComponent();
             Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
 
@@ -70,7 +70,7 @@ namespace DIploma_repair.Admin
             
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {  ///////////////////////items
@@ -95,7 +95,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -122,7 +122,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -149,7 +149,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -163,13 +163,13 @@ namespace DIploma_repair.Admin
                 comboBox3.SelectedIndex = -1;
                 textBox1.Clear();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             try
             {
@@ -184,7 +184,7 @@ namespace DIploma_repair.Admin
                 comboBox4.SelectedIndex = -1;
                 textBox2.Clear();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

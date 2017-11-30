@@ -23,7 +23,7 @@ namespace DIploma_repair.Admin
             InitializeComponent();
             Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
 
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -102,12 +102,12 @@ namespace DIploma_repair.Admin
             this.Dispose();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             textBox1.Text = dateTimePicker1.Text;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString().Contains("Дата"))
             {
@@ -119,7 +119,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -301,25 +301,27 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             DetailOrderList_Load(null, null);
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox1.Text = dataGridView1.CurrentCell.Value.ToString();
         }
 
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ReColorGrid();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            SaveFileDialog s = new SaveFileDialog
+            {
+                Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
+            };
             string path = "";
 
             if (s.ShowDialog() == DialogResult.OK)
@@ -360,10 +362,12 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            SaveFileDialog s = new SaveFileDialog
+            {
+                Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*"
+            };
             string path = "";
 
             if (s.ShowDialog() == DialogResult.OK)
@@ -397,16 +401,19 @@ namespace DIploma_repair.Admin
 
                 PdfPTable table = new PdfPTable(ds.Tables["Detail_order"].Columns.Count);
 
-                PdfPCell cell = new PdfPCell(new Phrase(" " + this.Text + " ", font));
-
-                cell.Colspan = ds.Tables["Detail_order"].Columns.Count;
-                cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-                cell.Border = 0;
+                PdfPCell cell = new PdfPCell(new Phrase(" " + this.Text + " ", font))
+                {
+                    Colspan = ds.Tables["Detail_order"].Columns.Count,
+                    HorizontalAlignment = PdfPCell.ALIGN_CENTER,
+                    Border = 0
+                };
                 table.AddCell(cell);
                 for (int j = 0; j < dataGridView1.ColumnCount; j++)
                 {
-                    cell = new PdfPCell(new Phrase(new Phrase(dataGridView1.Columns[j].HeaderText, font)));
-                    cell.BackgroundColor = iTextSharp.text.BaseColor.LIGHT_GRAY;
+                    cell = new PdfPCell(new Phrase(new Phrase(dataGridView1.Columns[j].HeaderText, font)))
+                    {
+                        BackgroundColor = iTextSharp.text.BaseColor.LIGHT_GRAY
+                    };
                     table.AddCell(cell);
                 }
 
@@ -423,16 +430,18 @@ namespace DIploma_repair.Admin
 
                 MessageBox.Show("Pdf-документ збережено!");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Проблеми зі збереженням в PDF формат!");
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.Filter = "xlsx files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            SaveFileDialog s = new SaveFileDialog
+            {
+                Filter = "xlsx files (*.xlsx)|*.xlsx|All files (*.*)|*.*"
+            };
             string path = "";
 
             if (s.ShowDialog() == DialogResult.OK)
@@ -491,7 +500,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Button6_Click(object sender, EventArgs e)
         {
             try
             {
@@ -516,7 +525,7 @@ namespace DIploma_repair.Admin
         }
 
         Bitmap bmp;
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(bmp, 0, 0);
         }

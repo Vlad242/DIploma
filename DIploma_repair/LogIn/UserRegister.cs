@@ -26,11 +26,11 @@ namespace DIploma_repair.LogIn
         {
             InitializeComponent();
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox1.Clear();
             textBox2.Clear();
@@ -168,7 +168,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        private void TextBox8_TextChanged(object sender, EventArgs e)
         {
             if(textBox8.Text != "")
             {
@@ -195,7 +195,7 @@ namespace DIploma_repair.LogIn
             }   
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void TextBox3_TextChanged(object sender, EventArgs e)
         {
             bool flag = true;
 
@@ -253,7 +253,7 @@ namespace DIploma_repair.LogIn
             
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void TextBox5_TextChanged(object sender, EventArgs e)
         {
             if (textBox5.TextLength < 8)
             {
@@ -276,7 +276,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void TextBox6_TextChanged(object sender, EventArgs e)
         {
             if(textBox5.Text == textBox6.Text && textBox6.TextLength > 7)
             {
@@ -292,12 +292,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
+        private void TextBox10_TextChanged(object sender, EventArgs e)
         {
             if (textBox10.Text.Contains("@"))
             {
@@ -313,7 +308,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             switch (UserType)
             {
@@ -357,7 +352,7 @@ namespace DIploma_repair.LogIn
                                             lg.Show();
                                             this.Close();
                                         }
-                                        catch (Exception ex)
+                                        catch (Exception)
                                         {
                                             MessageBox.Show("Something wrong!");
                                         }
@@ -423,7 +418,7 @@ namespace DIploma_repair.LogIn
                                             lg.Show();
                                             this.Close();
                                         }
-                                        catch (Exception ex)
+                                        catch (Exception)
                                         {
                                             MessageBox.Show("Something wrong!");
                                         }
@@ -488,7 +483,7 @@ namespace DIploma_repair.LogIn
                                         lg.Show();
                                         this.Close();
                                     }
-                                    catch (Exception ex)
+                                    catch (Exception)
                                     {
                                         MessageBox.Show("Something wrong!");
                                     }
@@ -517,7 +512,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void TextBox7_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox7.Text, "[^0-9]"))
             {

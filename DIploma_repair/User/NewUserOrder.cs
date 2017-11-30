@@ -12,39 +12,39 @@ namespace DIploma_repair.User
         public MySqlConnection conn;
         private int User_id;
 
-        public List<int> Select = new List<int>();
+        private new List<int> Select = new List<int>();
 
-        public List<int> Service_id = new List<int>();
-        public List<string> Service_name = new List<string>();
+        private List<int> Service_id = new List<int>();
+        private List<string> Service_name = new List<string>();
 
-        public List<int> Office_id = new List<int>();
-        public List<string> Office_name = new List<string>();
+        private List<int> Office_id = new List<int>();
+        private List<string> Office_name = new List<string>();
 
-        public List<int> Worker_id = new List<int>();
-        public List<int> Worker_count = new List<int>();
-        public List<string> Worker_name = new List<string>(); 
+        private List<int> Worker_id = new List<int>();
+        private List<int> Worker_count = new List<int>();
+        private List<string> Worker_name = new List<string>();
 
-        public List<int> Manufacturer_id = new List<int>();
-        public List<string> Manufacturer_name = new List<string>();
+        private List<int> Manufacturer_id = new List<int>();
+        private List<string> Manufacturer_name = new List<string>();
 
-        public List<int> Type_id = new List<int>();
-        public List<string> Type_name = new List<string>();
+        private List<int> Type_id = new List<int>();
+        private List<string> Type_name = new List<string>();
 
-        public List<int> Item_id = new List<int>();
-        public List<string> Item_name = new List<string>();
+        private List<int> Item_id = new List<int>();
+        private List<string> Item_name = new List<string>();
 
-        public List<int> Model_id = new List<int>();
-        public List<string> Model_name = new List<string>();
+        private List<int> Model_id = new List<int>();
+        private List<string> Model_name = new List<string>();
 
-        public List<int> Detail_id = new List<int>();
-        public List<string> Detail_name = new List<string>();
+        private List<int> Detail_id = new List<int>();
+        private List<string> Detail_name = new List<string>();
 
         public NewUserOrder(string login)
         {
             InitializeComponent();
             this.Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
 
@@ -126,7 +126,7 @@ namespace DIploma_repair.User
                 }
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -135,7 +135,7 @@ namespace DIploma_repair.User
             textBox2.Text = DateTime.Now.ToString("yyy:MM:dd");
         }
 
-        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -158,7 +158,7 @@ namespace DIploma_repair.User
                         Worker_count.Add(reader.GetInt32(1));
                         Worker_name.Add(reader.GetString(2) + " " + reader.GetString(3));
                     }
-                    catch(Exception ex)
+                    catch(Exception)
                     {
 
                     }
@@ -178,13 +178,13 @@ namespace DIploma_repair.User
                 }
                 textBox1.Text = Worker_name[index];
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 textBox1.Clear();
             }
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.Text != " " && comboBox2.Text != "")
             {
@@ -211,7 +211,7 @@ namespace DIploma_repair.User
                     }
                     reader.Close();
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
 
                 }
@@ -223,7 +223,7 @@ namespace DIploma_repair.User
             }
 
         }
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(comboBox3.Text != " " && comboBox3.Text != "")
             {
@@ -249,7 +249,7 @@ namespace DIploma_repair.User
                     }
                     reader.Close();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -260,7 +260,7 @@ namespace DIploma_repair.User
             }
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -284,13 +284,13 @@ namespace DIploma_repair.User
                 }
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
         }
 
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool flag = true;
             foreach(var item in listBox1.Items)
@@ -307,12 +307,12 @@ namespace DIploma_repair.User
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             listBox1.Items.Remove(listBox1.SelectedItem);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             List<int> prices = new List<int>();
             listBox2.Items.Clear();
@@ -368,14 +368,14 @@ namespace DIploma_repair.User
                 textBox3.Text = servPrice.ToString();
                 button2.Enabled = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
             button1.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (AllFieldsAreFull())
             {
@@ -495,7 +495,7 @@ namespace DIploma_repair.User
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.Text == "replacement parts" || comboBox1.Text == "order parts")
             {

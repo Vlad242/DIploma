@@ -18,7 +18,7 @@ namespace DIploma_repair.Worker
             InitializeComponent();
             Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
             textBox4.ReadOnly = true;
             textBox5.ReadOnly = true;
@@ -72,7 +72,7 @@ namespace DIploma_repair.Worker
             this.Dispose();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace DIploma_repair.Worker
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             try
             {

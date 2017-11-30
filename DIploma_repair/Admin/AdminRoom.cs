@@ -15,7 +15,7 @@ namespace DIploma_repair.Admin
             InitializeComponent();
             Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
 
@@ -89,7 +89,7 @@ namespace DIploma_repair.Admin
                     reader2.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

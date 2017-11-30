@@ -21,7 +21,7 @@ namespace DIploma_repair.Worker
             InitializeComponent();
             Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
 
 
@@ -53,7 +53,7 @@ namespace DIploma_repair.Worker
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -89,7 +89,7 @@ namespace DIploma_repair.Worker
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             ReSearch();
             ////////////////////////////////
@@ -207,7 +207,7 @@ namespace DIploma_repair.Worker
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             Searces.Clear();
             listBox1.Items.Clear();
@@ -216,7 +216,7 @@ namespace DIploma_repair.Worker
             WOrderList_Load(null, null);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             try
             {
@@ -237,14 +237,14 @@ namespace DIploma_repair.Worker
                 }
                 WOrderList_Load(null, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Cells[5].Value.ToString() != "Complete")
             {
@@ -267,12 +267,12 @@ namespace DIploma_repair.Worker
             this.Dispose();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox2.Text = dataGridView1.CurrentCell.Value.ToString();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString() == "Дата")
             {
@@ -284,12 +284,12 @@ namespace DIploma_repair.Worker
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             textBox2.Text = dateTimePicker1.Text;
         }
 
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ReColorGrid();
         }

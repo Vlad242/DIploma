@@ -16,7 +16,7 @@ namespace DIploma_repair.LogIn
         {
             InitializeComponent();
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
 
@@ -90,7 +90,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void checkBox3_CheckedChanged(object sender, System.EventArgs e)
+        private void CheckBox3_CheckedChanged(object sender, System.EventArgs e)
         {
             if (checkBox3.Checked)
             {
@@ -102,7 +102,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)/////login button
+        private void Button2_Click(object sender, EventArgs e)/////login button
         {
             if (comboBox1.Text != "" && comboBox1.Text != " " && textBox2.Text != "" && textBox2.Text != " ")
             {
@@ -210,7 +210,7 @@ namespace DIploma_repair.LogIn
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked)
             {

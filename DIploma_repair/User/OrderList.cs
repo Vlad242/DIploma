@@ -21,7 +21,7 @@ namespace DIploma_repair.User
             InitializeComponent();
             Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
 
 
@@ -53,7 +53,7 @@ namespace DIploma_repair.User
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -183,7 +183,7 @@ namespace DIploma_repair.User
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             ReSearch();
             ////////////////////////////////
@@ -205,7 +205,7 @@ namespace DIploma_repair.User
             ReColorGrid();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             Searces.Clear();
             listBox1.Items.Clear();
@@ -214,7 +214,7 @@ namespace DIploma_repair.User
             OrderList_Load(null, null);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             try
             {
@@ -234,19 +234,19 @@ namespace DIploma_repair.User
                     }
                 }
                 OrderList_Load(null, null);
-            }catch(Exception ex)
+            }catch(Exception)
             {
 
             }
            
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox2.Text = dataGridView1.CurrentCell.Value.ToString();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(comboBox1.SelectedItem.ToString() == "Дата")
             {
@@ -258,12 +258,12 @@ namespace DIploma_repair.User
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             textBox2.Text = dateTimePicker1.Text;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             CurrentOrderInfo orderInfo = new CurrentOrderInfo(Login, (int)dataGridView1.CurrentRow.Cells[0].Value);
             orderInfo.Show();
@@ -277,7 +277,7 @@ namespace DIploma_repair.User
             this.Dispose();
         }
 
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ReColorGrid();
         }

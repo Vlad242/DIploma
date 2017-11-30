@@ -119,7 +119,6 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(198, 21);
             this.comboBox3.TabIndex = 43;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -177,7 +176,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(198, 20);
             this.textBox10.TabIndex = 39;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.textBox10.TextChanged += new System.EventHandler(this.TextBox10_TextChanged);
             // 
             // label10
             // 
@@ -220,7 +219,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(198, 20);
             this.textBox3.TabIndex = 18;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // label6
             // 
@@ -285,7 +284,7 @@
             this.textBox5.Size = new System.Drawing.Size(198, 20);
             this.textBox5.TabIndex = 21;
             this.textBox5.UseSystemPasswordChar = true;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
             // textBox6
             // 
@@ -294,7 +293,7 @@
             this.textBox6.Size = new System.Drawing.Size(198, 20);
             this.textBox6.TabIndex = 22;
             this.textBox6.UseSystemPasswordChar = true;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox6.TextChanged += new System.EventHandler(this.TextBox6_TextChanged);
             // 
             // groupBox2
             // 
@@ -368,7 +367,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(199, 20);
             this.textBox7.TabIndex = 40;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.TextChanged += new System.EventHandler(this.TextBox7_TextChanged);
             // 
             // label4
             // 
@@ -415,7 +414,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(198, 21);
             this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -431,7 +430,7 @@
             this.textBox8.Size = new System.Drawing.Size(87, 20);
             this.textBox8.TabIndex = 36;
             this.textBox8.UseSystemPasswordChar = true;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textBox8.TextChanged += new System.EventHandler(this.TextBox8_TextChanged);
             // 
             // textBox2
             // 
@@ -458,7 +457,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Додати";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // UserRegister
             // 

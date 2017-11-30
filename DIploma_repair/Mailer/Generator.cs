@@ -11,7 +11,7 @@ namespace DIploma_repair.Mailer
         private void SetConnection()
         {
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
 
@@ -116,7 +116,7 @@ namespace DIploma_repair.Mailer
                     "З повагою команда " + ComandName + " ! :)";
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -229,7 +229,7 @@ namespace DIploma_repair.Mailer
                     "З повагою команда " + ComandName + " ! :)";
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

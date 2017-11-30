@@ -34,7 +34,7 @@
             set => port = value;
         }
 
-        public string getConnectInfo()
+        public string GetConnectInfo()
         {
             return "server=" + this.serverName + ";user=" + this.userName +
                    ";charset=" + this.charset + ";database=" + this.databaseName +

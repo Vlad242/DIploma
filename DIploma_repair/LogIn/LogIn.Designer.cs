@@ -67,7 +67,7 @@
             this.checkBox3.Text = "Показати пароль";
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox3.UseVisualStyleBackColor = false;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.CheckBox3_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -89,7 +89,7 @@
             this.button2.TabIndex = 19;
             this.button2.Text = "LogIn";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // checkBox2
             // 
@@ -104,7 +104,7 @@
             this.checkBox2.TabIndex = 18;
             this.checkBox2.Text = "Не зареєстровані?";
             this.checkBox2.UseVisualStyleBackColor = false;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // textBox2
             // 
@@ -176,7 +176,6 @@
             this.Controls.Add(this.label1);
             this.Name = "LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LogIn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LogIn_FormClosing);
             this.Load += new System.EventHandler(this.LogIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

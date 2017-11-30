@@ -1,12 +1,12 @@
-﻿using AForge.Video.DirectShow;
-using AForge.Video;
+﻿using AForge.Video;
+using AForge.Video.DirectShow;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using ZXing;
 using System.Drawing;
 using System.Media;
+using System.Windows.Forms;
+using ZXing;
 
 namespace DIploma_repair.Admin
 {
@@ -28,7 +28,7 @@ namespace DIploma_repair.Admin
             InitializeComponent();
             Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
 
@@ -88,7 +88,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if(textBox1.Text != " " && textBox2.Text != " " &&
                 textBox1.Text != "" && textBox2.Text != "")
@@ -113,7 +113,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
@@ -149,12 +149,12 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             if (videoSource == null)
             {
                 videoSource = new VideoCaptureDevice(videoDevices[comboBox4.SelectedIndex].MonikerString);
-                videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
+                videoSource.NewFrame += new NewFrameEventHandler(Video_NewFrame);
                 videoSource.Start();
             }
             else
@@ -163,7 +163,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        private void Video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
             pictureBox1.Image = bitmap;
@@ -198,7 +198,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             if (videoSource != null)
             {
@@ -213,7 +213,7 @@ namespace DIploma_repair.Admin
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             if(textBox3.Text != "" && textBox3.Text != " ")
             {

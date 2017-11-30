@@ -16,7 +16,7 @@ namespace DIploma_repair.User
             InitializeComponent();
             this.Login = login;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
         }
         private void LogOut(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace DIploma_repair.User
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -156,7 +156,7 @@ namespace DIploma_repair.User
             this.Dispose();
         }
 
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ReColorGrid();
         }

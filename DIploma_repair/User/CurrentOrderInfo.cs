@@ -17,7 +17,7 @@ namespace DIploma_repair.User
             Login = login;
             Index = index;
             DataBase.DataBaseInfo dataBase = new DataBase.DataBaseInfo();
-            conn = new MySqlConnection(dataBase.getConnectInfo());
+            conn = new MySqlConnection(dataBase.GetConnectInfo());
             conn.Open();
             richTextBox1.ReadOnly = true;
             richTextBox2.ReadOnly = true;
