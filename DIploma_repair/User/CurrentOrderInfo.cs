@@ -91,7 +91,7 @@ namespace DIploma_repair.User
                     label10.ForeColor = Color.Blue;
                 }
 
-                if(listBox1.Items.Count <= 1)
+                if (listBox1.Items.Count <= 1)
                 {
                     this.Size = new Size(567, 438);
                 }

@@ -72,6 +72,10 @@ namespace DIploma_repair.Worker
                 {
                     label13.ForeColor = Color.Blue;
                 }
+                else if (label13.Text == "Purchase")
+                {
+                    label13.ForeColor = Color.Purple;
+                }
 
                 listBox1.Items.Clear();
                 listBox1.Items.Add("Назва -> Країна виробник -> Ціна");

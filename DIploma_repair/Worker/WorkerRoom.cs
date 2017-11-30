@@ -113,6 +113,11 @@ namespace DIploma_repair.Worker
                             dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Cyan;
                             break;
                         }
+                    case "Purchase":
+                        {
+                            dataGridView1.Rows[i].Cells[4].Style.BackColor = Color.Yellow;
+                            break;
+                        }
                 }
             }
         }

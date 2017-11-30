@@ -32,8 +32,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge.Video">
+      <HintPath>Libs\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>Libs\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="CryptoMD5_XOR">
       <HintPath>Libs\CryptoMD5_XOR.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>Libs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Libs\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>Libs\MySql.Data.dll</HintPath>
@@ -49,13 +67,35 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing">
+      <HintPath>Libs\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AddDetail.Designer.cs">
+      <DependentUpon>AddDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AddDevice.Designer.cs">
+      <DependentUpon>AddDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminRoom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\AdminRoom.Designer.cs">
       <DependentUpon>AdminRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DetailOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DetailOrderList.Designer.cs">
+      <DependentUpon>DetailOrderList.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase\DataBaseInfo.cs" />
     <Compile Include="LogIn\InternetConection.cs" />
@@ -130,6 +170,18 @@
     <Compile Include="Worker\WorkOrder.Designer.cs">
       <DependentUpon>WorkOrder.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\AddDetail.resx">
+      <DependentUpon>AddDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AddDevice.resx">
+      <DependentUpon>AddDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminRoom.resx">
+      <DependentUpon>AdminRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\DetailOrderList.resx">
+      <DependentUpon>DetailOrderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>

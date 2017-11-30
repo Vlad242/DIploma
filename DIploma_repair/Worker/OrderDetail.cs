@@ -107,7 +107,7 @@ namespace DIploma_repair.Worker
                     textBox4.Text != " " && textBox5.Text != " " && comboBox1.Text != " ")
                 {
                     string sql = "Insert into Detail_order (D_Order_id, Detail_id, Worker_id, Status_id, D_Order_date, D_Count, D_descriptions) values (null," +
-                  Detail_ids[comboBox1.SelectedIndex] + "," + Worker_id + "," + 1 + ",'" + textBox5.Text + "','" + numericUpDown1.Value + "','" + richTextBox1.Text + "');";
+                  Detail_ids[comboBox1.SelectedIndex] + "," + Worker_id + "," + 4 + ",'" + textBox5.Text + "','" + numericUpDown1.Value + "','" + richTextBox1.Text + "');";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Замовлення додано!");
