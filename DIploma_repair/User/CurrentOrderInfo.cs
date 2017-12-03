@@ -21,7 +21,7 @@ namespace DIploma_repair.User
             conn.Open();
             richTextBox1.ReadOnly = true;
             richTextBox2.ReadOnly = true;
-            this.Text = "Замовлення №" + Index;
+            this.Text = "Order №" + Index;
         }
 
         private void CurrentOrderInfo_Load(object sender, System.EventArgs e)
@@ -31,29 +31,29 @@ namespace DIploma_repair.User
                 MySqlCommand cmd2 = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT Service.Service_name, Service.Service_price,Worker.Worker_surname, Worker.Worker_name, Worker.Worker_fname, Office.Office_name, Office.Address, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Complete_set, Orders.Appearance, Orders.Order_price, Orders.Order_Date, Orders.Description, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) INNER JOIN Model on(Model.Model_id=Orders.Model_id) INNER JOIN Serial on(Model.Model_id=Serial.Model_id) INNER JOIN Item on(Model.Item_id =Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Worker on(Worker.Worker_id= Orders.Worker_id) INNER JOIN Office on(Worker.Office_id=Office.Office_id) WHERE Orders.Order_id=" + Index + ";")
+                    CommandText = string.Format("SELECT DISTINCT Service.Service_name, Service.Service_price,Worker.Worker_surname, Worker.Worker_name, Worker.Worker_fname, Office.Office_name, Office.Address, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Complete_set, Orders.Appearance, Orders.Order_price, Orders.Order_Date, Orders.Description, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) INNER JOIN Serial on(Orders.Serial_number=Serial.Serial_number) INNER JOIN Model on(Model.Model_id=Serial.Model_id)  INNER JOIN Item on(Model.Item_id =Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Worker on(Worker.Worker_id= Orders.Worker_id) INNER JOIN Office on(Worker.Office_id=Office.Office_id) WHERE Orders.Order_id=" + Index + ";")
                 };
                 MySqlDataReader reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
 
-                    label12.Text = "ID замовлення:";
-                    label13.Text = "Сервіс:";
-                    label14.Text = "Замовлення обслуговує:";
-                    label15.Text = "Офіс:";
-                    label16.Text = "Ваш пристрій:";
-                    label17.Text = "Серійний номер:";
-                    label18.Text = "Оцінка стану:";
-                    label19.Text = "Загальна ціна замовлення:";
-                    label20.Text = "Статус замовлення:";
-                    label7.Text = "Повний комплект:";
-                    label11.Text = "Опис:";
-                    label21.Text = "Дата замовлення:";
+                    label12.Text = "ID:";
+                    label13.Text = "Service:";
+                    label14.Text = "The order serves:";
+                    label15.Text = "Office:";
+                    label16.Text = "Device:";
+                    label17.Text = "Serial:";
+                    label18.Text = "Score:";
+                    label19.Text = "Order price:";
+                    label20.Text = "Status:";
+                    label7.Text = "Complete set:";
+                    label11.Text = "Description:";
+                    label21.Text = "Order date:";
 
                     label1.Text = Index.ToString();
-                    label2.Text = reader.GetString(0) + " (ціна:" + reader.GetString(1) + ")";
+                    label2.Text = reader.GetString(0) + " (price:" + reader.GetString(1) + ")";
                     label3.Text = reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4);
-                    label4.Text = reader.GetString(5) + " (за адресою:" + reader.GetString(6) + ")";
+                    label4.Text = reader.GetString(5) + " (address:" + reader.GetString(6) + ")";
                     label5.Text = reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9);
                     label6.Text = reader.GetString(10);
                     richTextBox1.Text = reader.GetString(11);
@@ -66,7 +66,7 @@ namespace DIploma_repair.User
                 reader.Close();
 
                 listBox1.Items.Clear();
-                listBox1.Items.Add("Назва -> Країна виробник -> Ціна");
+                listBox1.Items.Add("Name -> Country producer -> Price");
                 cmd2 = new MySqlCommand
                 {
                     Connection = conn,

@@ -83,14 +83,15 @@ namespace DIploma_repair.Worker
                    textBox1.Text + "','" + textBox2.Text + "'," +numericUpDown2.Value + ");";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Деталь додано!");
+                    MessageBox.Show("Detail was added!");
                     textBox1.Clear();
                     textBox2.Clear();
                     numericUpDown2.Value = 1;
+                    OrderDetail_Load(null, null);
                 }
                 else
                 {
-                    MessageBox.Show("Не всі поля заповнені!");
+                    MessageBox.Show("Not all fields are full!");
                 }
             }
             catch (Exception)
@@ -110,14 +111,14 @@ namespace DIploma_repair.Worker
                   Detail_ids[comboBox1.SelectedIndex] + "," + Worker_id + "," + 4 + ",'" + textBox5.Text + "','" + numericUpDown1.Value + "','" + richTextBox1.Text + "');";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Замовлення додано!");
+                    MessageBox.Show("Order was added!");
                     comboBox1.SelectedIndex = 0;
                     numericUpDown1.Value = 1;
                     richTextBox1.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Не всі поля заповнені!");
+                    MessageBox.Show("Not all fields are full!");
                 }
             }
             catch (Exception)

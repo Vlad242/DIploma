@@ -36,19 +36,19 @@ namespace DIploma_repair.User
             {
                 ////////////////////////////////
                 dataGridView1.Columns.Clear();
-                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT Orders.Order_id, Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Model on(Model.Model_id=Orders.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login='" + Login + "');", conn);
+                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT Orders.Order_id, Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Serial on(Serial.Serial_number=Orders.Serial_number) INNER JOIN Model on(Model.Model_id=Serial.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login='" + Login + "');", conn);
                 DataSet ds = new DataSet();
                 mda.Fill(ds, "Orders");
                 dataGridView1.DataSource = ds.Tables["Orders"];
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
-                dataGridView1.Columns[1].HeaderText = "Назва сервісу";
-                dataGridView1.Columns[2].HeaderText = "Бренд";
-                dataGridView1.Columns[3].HeaderText = "Модель";
-                dataGridView1.Columns[4].HeaderText = "Дата замовлення";
-                dataGridView1.Columns[5].HeaderText = "Статус замовлення";
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Service name";
+                dataGridView1.Columns[2].HeaderText = "Brand";
+                dataGridView1.Columns[3].HeaderText = "Model";
+                dataGridView1.Columns[4].HeaderText = "Order date";
+                dataGridView1.Columns[5].HeaderText = "Order status";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();
@@ -122,40 +122,40 @@ namespace DIploma_repair.User
                 }
                 switch (comboBox1.Text)
                 {
-                    case "ID замовлення":
+                    case "Order ID":
                         {
                             addSearch += "and Orders.Order_id" + operation + "'" + textBox2.Text + "' ";
-                            listText = "ID замовлення " + operation + " " + textBox2.Text;
+                            listText = "Order ID " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Назва сервісу":
+                    case "Service name":
                         {
                             addSearch += "and Service.Service_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Назва сервісу " + operation + " " + textBox2.Text;
+                            listText = "Service name " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Виробник":
+                    case "Producer":
                         {
                             addSearch += "and Manufacturer.M_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Виробник " + operation + " " + textBox2.Text;
+                            listText = "Producer " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Модель":
+                    case "Model":
                         {
                             addSearch += "and Model.Model_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Модель " + operation + " " + textBox2.Text;
+                            listText = "Model " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Дата":
+                    case "Date":
                         {
                             addSearch += "and Orders.Order_Date='" + textBox2.Text + "' ";
-                            listText = "Дата = " + textBox2.Text;
+                            listText = "Date = " + textBox2.Text;
                             break;
                         }
-                    case "Статус":
+                    case "Status":
                         {
                             addSearch += "and Status.Status_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Статус " + operation + " " + textBox2.Text;
+                            listText = "Status " + operation + " " + textBox2.Text;
                             break;
                         }
                     default:
@@ -188,19 +188,19 @@ namespace DIploma_repair.User
             ReSearch();
             ////////////////////////////////
             dataGridView1.Columns.Clear();
-            MySqlDataAdapter mda = new MySqlDataAdapter("SELECT Orders.Order_id, Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Model on(Model.Model_id=Orders.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login='" + Login + "') " + Search + ";", conn);
+            MySqlDataAdapter mda = new MySqlDataAdapter("SELECT Orders.Order_id, Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Serial on(Serial.Serial_number=Orders.Serial_number) INNER JOIN Model on(Model.Model_id=Serial.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login='" + Login + "') " + Search + ";", conn);
             DataSet ds = new DataSet();
             mda.Fill(ds, "Orders");
             dataGridView1.DataSource = ds.Tables["Orders"];
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 dataGridView1.Rows[i].Cells[0].ReadOnly = true;
             /////columns names
-            dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
-            dataGridView1.Columns[1].HeaderText = "Назва сервісу";
-            dataGridView1.Columns[2].HeaderText = "Бренд";
-            dataGridView1.Columns[3].HeaderText = "Модель";
-            dataGridView1.Columns[4].HeaderText = "Дата замовлення";
-            dataGridView1.Columns[5].HeaderText = "Статус замовлення";
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[1].HeaderText = "Service name";
+            dataGridView1.Columns[2].HeaderText = "Brand";
+            dataGridView1.Columns[3].HeaderText = "Model";
+            dataGridView1.Columns[4].HeaderText = "Order date";
+            dataGridView1.Columns[5].HeaderText = "Order status";
 
             ReColorGrid();
         }
@@ -226,15 +226,19 @@ namespace DIploma_repair.User
                         {
                             int index = Search.IndexOf(Searces[i]);
                             int lenght = Searces[i].Length;
-                            Search.Remove(index, lenght);
+                            int ln = Search.Length;
+                            Search = Search.Remove(index, lenght);
                             indexes.Remove(indexes[i]);
                             Searces.Remove(Searces[i]);
                             listBox1.Items.Remove(listBox1.SelectedItem);
                         }
                     }
                 }
-                OrderList_Load(null, null);
-            }catch(Exception)
+                comboBox1.Text = "";
+                textBox2.Text = "";
+                button2.PerformClick();
+            }
+            catch(Exception)
             {
 
             }
@@ -248,7 +252,7 @@ namespace DIploma_repair.User
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedItem.ToString() == "Дата")
+            if(comboBox1.SelectedItem.ToString() == "Date")
             {
                 dateTimePicker1.Visible = true;
             }

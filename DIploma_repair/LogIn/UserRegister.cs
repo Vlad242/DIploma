@@ -58,7 +58,7 @@ namespace DIploma_repair.LogIn
 
             switch (comboBox1.Text)
             {
-                case "Адміністратор":
+                case "Admin":
                     {
                         if (!ConfirmedAdmin)
                         {
@@ -75,7 +75,7 @@ namespace DIploma_repair.LogIn
                         }
                         break;
                     }
-                case "Користувач":
+                case "User":
                     {
                         button1.Enabled = true;
                         textBox8.Visible = false;
@@ -85,7 +85,7 @@ namespace DIploma_repair.LogIn
                         UserType = 1;
                         break;
                     }
-                case "Працівник":
+                case "Worker":
                     {
                         button1.Enabled = true;
                         textBox8.Visible = false;
@@ -346,7 +346,7 @@ namespace DIploma_repair.LogIn
                                                 + pass + "', '" + textBox9.Text + "', '" + textBox10.Text + "')";
                                             MySqlCommand cmd = new MySqlCommand(sql, conn);
                                             cmd.ExecuteNonQuery();
-                                            MessageBox.Show("Реєстрація пройшла успішно!");
+                                            MessageBox.Show("Registration was successful!");
                                             conn.Close();
                                             LogIn lg = new LogIn();
                                             lg.Show();
@@ -412,7 +412,7 @@ namespace DIploma_repair.LogIn
                                                 + pass + "', '" + textBox9.Text + "', '" + textBox10.Text + "')";
                                             MySqlCommand cmd = new MySqlCommand(sql, conn);
                                             cmd.ExecuteNonQuery();
-                                            MessageBox.Show("Реєстрація пройшла успішно!");
+                                            MessageBox.Show("Registration was successful!");
                                             conn.Close();
                                             LogIn lg = new LogIn();
                                             lg.Show();
@@ -477,7 +477,7 @@ namespace DIploma_repair.LogIn
                                             + pass + "', '" + textBox11.Text + "', '" + index + "')";
                                         MySqlCommand cmd = new MySqlCommand(sql, conn);
                                         cmd.ExecuteNonQuery();
-                                        MessageBox.Show("Реєстрація пройшла успішно!");
+                                        MessageBox.Show("Registration was successful!");
                                         conn.Close();
                                         LogIn lg = new LogIn();
                                         lg.Show();

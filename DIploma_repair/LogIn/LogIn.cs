@@ -24,9 +24,9 @@ namespace DIploma_repair.LogIn
         {
             switch (internetConection.GetInetStaus())
             {
-                case "Без доступу до інтернету":
+                case "No access to the Internet":
                     {
-                        label1.Text = "Без доступу до інтернету";
+                        label1.Text = "No access to the Internet";
                         label1.ForeColor = Color.Red;
                         pictureBox1.Image = new Bitmap(Directory.GetCurrentDirectory() + "\\DebugImage\\disconnect.png");
                         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -34,9 +34,9 @@ namespace DIploma_repair.LogIn
                         MessageBox.Show("Please check internet connection and restart application!");
                         break;
                     }
-                case "Обмежений доступ":
+                case "Limited access":
                     {
-                        label1.Text = "Обмежений доступ";
+                        label1.Text = "Limited access";
                         label1.ForeColor = Color.Orange;
                         pictureBox1.Image = new Bitmap(Directory.GetCurrentDirectory() + "\\Image\\disconnect.png");
                         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -44,9 +44,9 @@ namespace DIploma_repair.LogIn
                         MessageBox.Show("Please check internet connection and restart application!");
                         break;
                     }
-                case "Доступ до інтернету":
+                case "Internet connection":
                     {
-                        label1.Text = "Доступ до інтернету";
+                        label1.Text = "Internet connection";
                         label1.ForeColor = Color.Green;
                         pictureBox1.Image = new Bitmap(Directory.GetCurrentDirectory() + "\\DebugImage\\connect.png");
                         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -126,14 +126,14 @@ namespace DIploma_repair.LogIn
                         if (SearchPass(Login, password, false))///// worker redirect
                         {
                             conn.Close();
-                            MessageBox.Show("Авторизація пройшла успішно!WELCOME WORKER " + Login + "!");
+                            MessageBox.Show("Authorization was successful!WELCOME WORKER " + Login + "!");
                             Worker.WorkerRoom work = new Worker.WorkerRoom(Login);
                             work.Show();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("Помилка логінізації, перевірте правильність введених даних!");
+                            MessageBox.Show("Error logging, check the correct data entry!");
                         }
                     }
                     else
@@ -141,7 +141,7 @@ namespace DIploma_repair.LogIn
                         if (Login.Contains("Admin"))////////admin redirect
                         {
                             conn.Close();
-                            MessageBox.Show("Авторизація пройшла успішно!WELCOME ADMIN :)");
+                            MessageBox.Show("Authorization was successful!WELCOME ADMIN :)");
                             Admin.AdminRoom adm = new Admin.AdminRoom(Login);
                             adm.Show();
                             this.Hide();
@@ -149,7 +149,7 @@ namespace DIploma_repair.LogIn
                         else ///// user redirect
                         {
                             conn.Close();
-                            MessageBox.Show("Авторизація пройшла успішно!WELCOME USER " + Login +"!");
+                            MessageBox.Show("Authorization was successful!WELCOME USER " + Login +"!");
                             User.UserRoom user = new User.UserRoom(Login); 
                             user.Show();
                             this.Hide();
@@ -158,12 +158,12 @@ namespace DIploma_repair.LogIn
                 }
                 else
                 {
-                    MessageBox.Show("Даний користувач не зареєстрований в системі!");
+                    MessageBox.Show("This user is not registered on the system!");
                 }
             }
             else
             {
-                MessageBox.Show("Заповніть всі поля логінізації!");
+                MessageBox.Show("Fill in all the logon fields!");
             }
         }
 

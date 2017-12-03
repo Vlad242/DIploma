@@ -158,7 +158,7 @@ namespace DIploma_repair.User
                         Worker_count.Add(reader.GetInt32(1));
                         Worker_name.Add(reader.GetString(2) + " " + reader.GetString(3));
                     }
-                    catch(Exception)
+                    catch(Exception ex)
                     {
 
                     }
@@ -168,7 +168,7 @@ namespace DIploma_repair.User
 
                 int index = 0;
                 int min = Worker_count.Min();
-                for(int i= 0; i<Worker_count.Count; i++)
+                for(int i= 0; i < Worker_count.Count; i++)
                 {
                     if (Worker_count[i] == min)
                     {
@@ -283,6 +283,19 @@ namespace DIploma_repair.User
                     comboBox6.Items.Add(reader.GetString(1) + "(" + reader.GetString(2) + ")");
                 }
                 reader.Close();
+
+                comboBox8.Items.Clear();
+                cmd = new MySqlCommand
+                {
+                    Connection = conn,
+                    CommandText = string.Format("SELECT Serial_number FROM Serial WHERE Model_id=" + id + ";")
+                };
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboBox8.Items.Add(reader.GetString(0));
+                }
+                reader.Close();
             }
             catch (Exception)
             {
@@ -382,10 +395,10 @@ namespace DIploma_repair.User
                if(listBox2.Items.Count > 0)
                 {
                     string sql = "Insert into Orders (Order_id, User_id, " +
-                        "Service_id, Worker_id, Model_id, Status_id, Description, " +
+                        "Service_id, Worker_id, Serial_number, Status_id, Description, " +
                         "Order_Date, Complete_set, Appearance, Order_price) values (null," +
-                        User_id + "," + Service_id[comboBox1.SelectedIndex] + "," + GetWorkerId() + "," +
-                        Model_id[comboBox5.SelectedIndex] + "," + 1 + ",'" + richTextBox2.Text + "','" +
+                        User_id + "," + Service_id[comboBox1.SelectedIndex] + "," + GetWorkerId() + ",'" +
+                        comboBox8.Text + "'," + 1 + ",'" + richTextBox2.Text + "','" +
                         textBox2.Text + "','" + richTextBox1.Text + "'," + numericUpDown1.Value + "," + textBox3.Text + ");";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
@@ -397,21 +410,21 @@ namespace DIploma_repair.User
                         cmd.ExecuteNonQuery();
                     }
                     Send();
-                    MessageBox.Show("Заявку прийнято!");
+                    MessageBox.Show("Application approved!");
                     this.Close();
                 }
                 else
                 {
                     string sql = "Insert into Orders (Order_id, User_id, " +
-                        "Service_id, Worker_id, Model_id, Status_id, Description, " +
+                        "Service_id, Worker_id, Serial_number, Status_id, Description, " +
                         "Order_Date, Complete_set, Appearance, Order_price) values (null" +
-                        User_id + "," + Service_id[comboBox1.SelectedIndex] + "," + GetWorkerId() + "," + 
-                        Model_id[comboBox5.SelectedIndex] + "," + 1 + ",'" + richTextBox2.Text + "'," +
+                        User_id + "," + Service_id[comboBox1.SelectedIndex] + "," + GetWorkerId() + ",'" + 
+                        comboBox8.Text + "'," + 1 + ",'" + richTextBox2.Text + "'," +
                         textBox2.Text + ",'" + richTextBox1.Text + "','" + numericUpDown1.Value + "','" + textBox3.Text + "');";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
                     Send();
-                    MessageBox.Show("Заявку прийнято!");
+                    MessageBox.Show("Application approved!");
                     this.Close();
                 }
 
@@ -465,6 +478,7 @@ namespace DIploma_repair.User
                 comboBox5.Text != "" && comboBox7.Text != "" &&
                 textBox1.Text != "" && textBox2.Text != "" &&
                 textBox3.Text != "" && richTextBox1.Text != "" &&
+                comboBox8.Text != "" && comboBox8.Text != " " &&
 
                 comboBox1.Text != " " && comboBox2.Text != " " &&
                 comboBox3.Text != " " && comboBox4.Text != " " &&

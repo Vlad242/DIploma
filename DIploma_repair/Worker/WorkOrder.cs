@@ -15,6 +15,7 @@ namespace DIploma_repair.Worker
 
         private List<int> id = new List<int>();
         private List<int> price = new List<int>();
+        private List<int> details = new List<int>();
 
         public WorkOrder(string login, int index)
         {
@@ -33,18 +34,18 @@ namespace DIploma_repair.Worker
         {
             try
             {
-                label1.Text = "Сервіс:";
-                label2.Text = "Пристрій:";
-                label3.Text = "Серійний номер:";
-                label4.Text = "Оцінка стану:";
-                label5.Text = "Повний комплект:";
-                label6.Text = "Коментар:";
+                label1.Text = "Service:";
+                label2.Text = "Device:";
+                label3.Text = "Serial:";
+                label4.Text = "Condition:";
+                label5.Text = "Complete set:";
+                label6.Text = "Description:";
 
 
                 MySqlCommand cmd2 = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT Service.Service_name, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Appearance, Orders.Complete_set, Orders.Description, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) INNER JOIN Model on(Model.Model_id=Orders.Model_id) INNER JOIN Serial on(Model.Model_id=Serial.Model_id) INNER JOIN Item on(Model.Item_id =Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) WHERE Orders.Order_id=" + Index + ";")
+                    CommandText = string.Format("SELECT Service.Service_name, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Appearance, Orders.Complete_set, Orders.Description, Status.Status_name FROM Orders INNER JOIN Service on(Orders.Service_id=Service.Service_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) INNER JOIN Serial on(Orders.Serial_number=Serial.Serial_number)  INNER JOIN Model on(Model.Model_id=Serial.Model_id) INNER JOIN Item on(Model.Item_id =Item.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) WHERE Orders.Order_id=" + Index + ";")
                 };
                 MySqlDataReader reader = cmd2.ExecuteReader();
                 while (reader.Read())
@@ -78,31 +79,46 @@ namespace DIploma_repair.Worker
                 }
 
                 listBox1.Items.Clear();
-                listBox1.Items.Add("Назва -> Країна виробник -> Ціна");
+                details.Clear();
+                listBox1.Items.Add("Name -> Producing country ->Price");
                 cmd2 = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT  Detail.Detail_name, Detail.Prod_country, Detail.Price FROM Detail INNER JOIN is_for on(Detail.Detail_id = is_for.Detail_id) WHERE is_for.Order_id =" + Index + ";")
+                    CommandText = string.Format("SELECT  Detail.Detail_name, Detail.Prod_country, Detail.Price, Detail.Detail_id FROM Detail INNER JOIN is_for on(Detail.Detail_id = is_for.Detail_id) WHERE is_for.Order_id =" + Index + ";")
                 };
                 reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
                     listBox1.Items.Add(reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2));
+                    details.Add(reader.GetInt32(3));
                 }
                 reader.Close();
 
+                id.Clear();
+                price.Clear();
                 comboBox1.Items.Clear();
                 cmd2 = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT Detail.Detail_id, Detail.Detail_name, Detail.Prod_country, Detail.Price FROM Detail INNER JOIN consist_of on (Detail.Detail_id = consist_of.Detail_id) WHERE consist_of.Model_id = (SELECT Model_id FROM Orders WHERE Order_id=" + Index + ");")
+                    CommandText = string.Format("SELECT Detail.Detail_id, Detail.Detail_name, Detail.Prod_country, Detail.Price FROM Detail INNER JOIN consist_of on (Detail.Detail_id = consist_of.Detail_id) INNER JOIN Model on(consist_of.Model_id=Model.Model_id) INNER JOIN Serial on(Model.Model_id = Serial.Model_id) INNER JOIN Orders on(Orders.Serial_number=Serial.Serial_number) WHERE Orders.Order_id=" + Index + ";")
                 };
                 reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
-                    comboBox1.Items.Add(reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3));
-                    id.Add(reader.GetInt32(0));
-                    price.Add(reader.GetInt32(3));
+                    bool flag = true;
+                    for (int i = 0; i < details.Count; i++)
+                    {
+                        if (details[i] == reader.GetInt32(0))
+                        {
+                            flag = false;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox1.Items.Add(reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3));
+                        id.Add(reader.GetInt32(0));
+                        price.Add(reader.GetInt32(3));
+                    }
                 }
                 reader.Close();
 

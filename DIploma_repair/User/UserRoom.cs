@@ -45,13 +45,13 @@ namespace DIploma_repair.User
                 MySqlDataReader reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
-                    this.Text = "Кабінет користувача " + reader.GetString(0) + " " + reader.GetString(1);
-                    label1.Text = "Ім'я: " + reader.GetString(0);
-                    label2.Text = "Прізвище: " + reader.GetString(1);
-                    label3.Text = "По батькові: " + reader.GetString(2);
-                    label4.Text = "Дата народження: " + reader.GetString(3).Remove(10); ;
-                    label5.Text = "Номер телефону: " + reader.GetString(4);
-                    label6.Text = "Адреса: " + reader.GetString(5);
+                    this.Text = "User cabinet " + reader.GetString(0) + " " + reader.GetString(1);
+                    label1.Text = "Name: " + reader.GetString(0);
+                    label2.Text = "Surname: " + reader.GetString(1);
+                    label3.Text = "Father name: " + reader.GetString(2);
+                    label4.Text = "Birthdate: " + reader.GetString(3).Remove(10); ;
+                    label5.Text = "Phone number: " + reader.GetString(4);
+                    label6.Text = "Address: " + reader.GetString(5);
                     label7.Text = "E-mail: " + reader.GetString(6);
                 }
                 reader.Close();
@@ -70,23 +70,23 @@ namespace DIploma_repair.User
                 reader2.Close();
                 
                 dataGridView1.Columns.Clear();
-                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Model on (Orders.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login= '"+Login+"') limit 8;", conn);
+                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Serial on (Serial.Serial_number=Orders.Serial_number)  INNER JOIN Model on (Serial.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.User_id = (SELECT User_id FROM Users WHERE Login= '" + Login + "') limit 8;", conn);
                 DataSet ds = new DataSet();
                 mda.Fill(ds, "Orders");
                 dataGridView1.DataSource = ds.Tables["Orders"];
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "Сервіс";
-                dataGridView1.Columns[1].HeaderText = "Бренд";
-                dataGridView1.Columns[2].HeaderText = "Модель";
-                dataGridView1.Columns[3].HeaderText = "Дата замовлення";
-                dataGridView1.Columns[4].HeaderText = "Статус замовлення";
+                dataGridView1.Columns[0].HeaderText = "Service";
+                dataGridView1.Columns[1].HeaderText = "Brand";
+                dataGridView1.Columns[2].HeaderText = "Model";
+                dataGridView1.Columns[3].HeaderText = "Order date";
+                dataGridView1.Columns[4].HeaderText = "Status";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }

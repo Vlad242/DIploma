@@ -32,14 +32,14 @@ namespace DIploma_repair.Worker
                 MySqlDataReader reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
-                    this.Text = "Кабінет працівника " + reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2);
-                    label1.Text = "Ім'я: " + reader.GetString(0);
-                    label2.Text = "Прізвище: " + reader.GetString(1);
-                    label3.Text = "По батькові: " + reader.GetString(2);
-                    label4.Text = "Дата народження: " + reader.GetString(3).Remove(10); ;
-                    label5.Text = "Професія: " + reader.GetString(4);
-                    label6.Text = "Номер телефону: " + reader.GetString(5);
-                    label7.Text = "Офіс: " + reader.GetString(6);
+                    this.Text = "Cabinet of the employee " + reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2);
+                    label1.Text = "Name: " + reader.GetString(0);
+                    label2.Text = "Surname: " + reader.GetString(1);
+                    label3.Text = "Father name: " + reader.GetString(2);
+                    label4.Text = "Birthdate: " + reader.GetString(3).Remove(10); ;
+                    label5.Text = "Proffession: " + reader.GetString(4);
+                    label6.Text = "Phone number: " + reader.GetString(5);
+                    label7.Text = "Office: " + reader.GetString(6);
                 }
                 reader.Close();
 
@@ -52,7 +52,7 @@ namespace DIploma_repair.Worker
                 MySqlDataReader reader2 = cmd1.ExecuteReader();
                 while (reader2.Read())
                 {
-                    label9.Text = "Всього: " + reader2.GetString(0);
+                    label9.Text = "Total: " + reader2.GetString(0);
                 }
                 reader2.Close();
                 //////////////////////
@@ -64,23 +64,23 @@ namespace DIploma_repair.Worker
                 reader2 = cmd1.ExecuteReader();
                 while (reader2.Read())
                 {
-                    label8.Text = "Не виконано: " + reader2.GetString(0);
+                    label8.Text = "Not done: " + reader2.GetString(0);
                 }
                 reader2.Close();
 
                 dataGridView1.Columns.Clear();
-                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Model on (Orders.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.Worker_id = (SELECT Worker_id FROM Worker WHERE Login= '" + Login + "') limit 8;", conn);
+                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Service.Service_name, Manufacturer.M_name, Model.Model_name, Orders.Order_Date, Status.Status_name FROM Orders INNER JOIN Service on (Service.Service_id=Orders.Service_id) INNER JOIN Serial on (Orders.Serial_number=Serial.Serial_number) INNER JOIN Model on (Serial.Model_id=Model.Model_id) INNER JOIN Item on(Item.Item_id=Model.Item_id) INNER JOIN Manufacturer on(Manufacturer.M_id=Item.M_id) INNER JOIN Status on(Orders.Status_id=Status.Status_id) WHERE Orders.Worker_id = (SELECT Worker_id FROM Worker WHERE Login= '" + Login + "') limit 8;", conn);
                 DataSet ds = new DataSet();
                 mda.Fill(ds, "Orders");
                 dataGridView1.DataSource = ds.Tables["Orders"];
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "Сервіс";
-                dataGridView1.Columns[1].HeaderText = "Бренд";
-                dataGridView1.Columns[2].HeaderText = "Модель";
-                dataGridView1.Columns[3].HeaderText = "Дата замовлення";
-                dataGridView1.Columns[4].HeaderText = "Статус замовлення";
+                dataGridView1.Columns[0].HeaderText = "Service";
+                dataGridView1.Columns[1].HeaderText = "Brand";
+                dataGridView1.Columns[2].HeaderText = "Model";
+                dataGridView1.Columns[3].HeaderText = "Order date";
+                dataGridView1.Columns[4].HeaderText = "Status";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();

@@ -72,7 +72,7 @@ namespace DIploma_repair.Admin
                 videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
                 reader = new ZXing.BarcodeReader();
-
+                comboBox4.Items.Clear();
                 if (videoDevices.Count > 0)
                 {
                     foreach (FilterInfo device in videoDevices)
@@ -99,7 +99,7 @@ namespace DIploma_repair.Admin
                     textBox1.Text + "','" + textBox2.Text + "','" + numericUpDown1.Value + "');";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Деталь " + textBox1.Text + " додано!");
+                    MessageBox.Show("Detail " + textBox1.Text + " was added!");
                     AddDetail_Load(null, null);
                 }
                 catch(Exception)
@@ -109,7 +109,7 @@ namespace DIploma_repair.Admin
             }
             else
             {
-                MessageBox.Show("Заповніть всі поля форми!");
+                MessageBox.Show("Check all fields!");
             }
         }
 
@@ -117,11 +117,20 @@ namespace DIploma_repair.Admin
         {
             try
             {
-                string sql = "Insert into consist_of (Detail_id, Model_id) values (" +
-               detail[comboBox1.SelectedIndex] + "," + model[comboBox2.SelectedIndex] + ");";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Прив'язку створено!");
+                if(comboBox1.Text != "" && comboBox2.Text != "" &&
+                    comboBox1.Text != " " && comboBox2.Text != " ")
+                {
+                    string sql = "Insert into consist_of (Detail_id, Model_id) values (" +
+                    detail[comboBox1.SelectedIndex] + "," + model[comboBox2.SelectedIndex] + ");";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Bind accept!");
+                }
+                else
+                {
+                    MessageBox.Show("Сhoose the model and the detail!");
+                }
+               
             }
             catch (Exception)
             {
@@ -223,7 +232,7 @@ namespace DIploma_repair.Admin
                       textBox3.Text + "'," + detail[comboBox3.SelectedIndex] + ");";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Деталь додано до бази даних!");
+                    MessageBox.Show("Detail was added to database!");
                     listBox1.Items.Add(comboBox3.SelectedItem.ToString() + " - " + textBox3.Text );
                     textBox3.Clear();
                     /////////////////////

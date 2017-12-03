@@ -12,20 +12,20 @@ namespace DIploma_repair.LogIn
                 IPHostEntry entry = Dns.GetHostEntry("dns.msftncsi.com");
                 if (entry.AddressList.Length == 0)
                 {
-                    return "Без доступу до інтернету";
+                    return "No access to the Internet";
                 }
                 else
                 {
                     if (!entry.AddressList[0].ToString().Equals("131.107.255.255"))
                     {
 
-                        return "Обмежений доступ";
+                        return "Limited access";
                     }
                 }
             }
             catch
             {
-                return "Без доступу до інтернету";
+                return "No access to the Internet";
             }
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://www.msftncsi.com/ncsi.txt");
@@ -35,23 +35,23 @@ namespace DIploma_repair.LogIn
 
                 if (responce.StatusCode != HttpStatusCode.OK)
                 {
-                    return "Обмежений доступ";
+                    return "Limited access";
                 }
                 using (StreamReader sr = new StreamReader(responce.GetResponseStream()))
                 {
                     if (sr.ReadToEnd().Equals("Microsoft NCSI"))
                     {
-                        return "Доступ до інтернету";
+                        return "Internet connection";
                     }
                     else
                     {
-                        return "Обмежений доступ";
+                        return "Limited access";
                     }
                 }
             }
             catch
             {
-                return "Без доступу до інтернету";
+                return "No access to the Internet";
             }
         }
     }

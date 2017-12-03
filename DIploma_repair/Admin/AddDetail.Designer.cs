@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -233,6 +233,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Barcode detail scanner";
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(345, 133);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(256, 108);
+            this.listBox2.TabIndex = 18;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(9, 208);
@@ -246,20 +254,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 188);
+            this.label8.Location = new System.Drawing.Point(10, 184);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(26, 13);
+            this.label8.Size = new System.Drawing.Size(88, 13);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Код";
+            this.label8.Text = "Code from reader";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(11, 157);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Деталь";
+            this.label7.Text = "Detail";
             // 
             // groupBox4
             // 
@@ -293,9 +301,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 49);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Формат";
+            this.label9.Text = "Format";
             // 
             // comboBox5
             // 
@@ -352,9 +360,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Пристрій";
+            this.label4.Text = "Device";
             // 
             // comboBox4
             // 
@@ -374,17 +382,17 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(97, 181);
+            this.textBox3.Location = new System.Drawing.Point(104, 181);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(224, 20);
+            this.textBox3.Size = new System.Drawing.Size(217, 20);
             this.textBox3.TabIndex = 10;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(97, 154);
+            this.comboBox3.Location = new System.Drawing.Point(104, 154);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(224, 21);
+            this.comboBox3.Size = new System.Drawing.Size(217, 21);
             this.comboBox3.TabIndex = 9;
             // 
             // pictureBox1
@@ -404,14 +412,6 @@
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Scanner screen";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(345, 133);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(256, 108);
-            this.listBox2.TabIndex = 18;
             // 
             // AddDetail
             // 

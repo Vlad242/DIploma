@@ -75,7 +75,7 @@
             this.groupBox3.Size = new System.Drawing.Size(205, 78);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Всього замовлень";
+            this.groupBox3.Text = "Order count";
             // 
             // label8
             // 
@@ -111,21 +111,21 @@
             this.провестиЗаняттяToolStripMenuItem,
             this.новеЗамовленняToolStripMenuItem});
             this.діїToolStripMenuItem.Name = "діїToolStripMenuItem";
-            this.діїToolStripMenuItem.Size = new System.Drawing.Size(33, 20);
-            this.діїToolStripMenuItem.Text = "Дії";
+            this.діїToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.діїToolStripMenuItem.Text = "Action";
             // 
             // провестиЗаняттяToolStripMenuItem
             // 
             this.провестиЗаняттяToolStripMenuItem.Name = "провестиЗаняттяToolStripMenuItem";
-            this.провестиЗаняттяToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.провестиЗаняттяToolStripMenuItem.Text = "Список замовлень";
+            this.провестиЗаняттяToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.провестиЗаняттяToolStripMenuItem.Text = "Order list";
             this.провестиЗаняттяToolStripMenuItem.Click += new System.EventHandler(this.OrderList);
             // 
             // новеЗамовленняToolStripMenuItem
             // 
             this.новеЗамовленняToolStripMenuItem.Name = "новеЗамовленняToolStripMenuItem";
-            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.новеЗамовленняToolStripMenuItem.Text = "Замовлення деталей";
+            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.новеЗамовленняToolStripMenuItem.Text = "Order detail";
             this.новеЗамовленняToolStripMenuItem.Click += new System.EventHandler(this.OrderDetail);
             // 
             // вийтиToolStripMenuItem
@@ -134,21 +134,21 @@
             this.зобліковогоЗаписуToolStripMenuItem,
             this.зПрограмиToolStripMenuItem});
             this.вийтиToolStripMenuItem.Name = "вийтиToolStripMenuItem";
-            this.вийтиToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.вийтиToolStripMenuItem.Text = "Вийти";
+            this.вийтиToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.вийтиToolStripMenuItem.Text = "Quit";
             // 
             // зобліковогоЗаписуToolStripMenuItem
             // 
             this.зобліковогоЗаписуToolStripMenuItem.Name = "зобліковогоЗаписуToolStripMenuItem";
-            this.зобліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.зобліковогоЗаписуToolStripMenuItem.Text = "Зоблікового запису";
+            this.зобліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зобліковогоЗаписуToolStripMenuItem.Text = "Logout";
             this.зобліковогоЗаписуToolStripMenuItem.Click += new System.EventHandler(this.Logout);
             // 
             // зПрограмиToolStripMenuItem
             // 
             this.зПрограмиToolStripMenuItem.Name = "зПрограмиToolStripMenuItem";
-            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.зПрограмиToolStripMenuItem.Text = "З програми";
+            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зПрограмиToolStripMenuItem.Text = "Exit";
             this.зПрограмиToolStripMenuItem.Click += new System.EventHandler(this.Exit);
             // 
             // dataGridView1
@@ -169,7 +169,7 @@
             this.groupBox2.Size = new System.Drawing.Size(677, 267);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Замовлення";
+            this.groupBox2.Text = "Orders";
             // 
             // label7
             // 
@@ -193,7 +193,7 @@
             this.groupBox1.Size = new System.Drawing.Size(264, 183);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Інформація користувача";
+            this.groupBox1.Text = "User infirmation";
             // 
             // label3
             // 

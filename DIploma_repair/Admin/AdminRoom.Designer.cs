@@ -38,18 +38,18 @@
             this.зПрограмиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,28 +75,28 @@
             this.замовленіДеталіToolStripMenuItem,
             this.додаванняДеталейToolStripMenuItem});
             this.діїToolStripMenuItem.Name = "діїToolStripMenuItem";
-            this.діїToolStripMenuItem.Size = new System.Drawing.Size(33, 20);
-            this.діїToolStripMenuItem.Text = "Дії";
+            this.діїToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.діїToolStripMenuItem.Text = "Action";
             // 
             // додатиПристрійToolStripMenuItem
             // 
             this.додатиПристрійToolStripMenuItem.Name = "додатиПристрійToolStripMenuItem";
-            this.додатиПристрійToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.додатиПристрійToolStripMenuItem.Text = "Додати пристрій";
+            this.додатиПристрійToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.додатиПристрійToolStripMenuItem.Text = "Add device";
             this.додатиПристрійToolStripMenuItem.Click += new System.EventHandler(this.AddDevice);
             // 
             // замовленіДеталіToolStripMenuItem
             // 
             this.замовленіДеталіToolStripMenuItem.Name = "замовленіДеталіToolStripMenuItem";
-            this.замовленіДеталіToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.замовленіДеталіToolStripMenuItem.Text = "Замовлені деталі";
+            this.замовленіДеталіToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.замовленіДеталіToolStripMenuItem.Text = "Order detail";
             this.замовленіДеталіToolStripMenuItem.Click += new System.EventHandler(this.DetailList);
             // 
             // додаванняДеталейToolStripMenuItem
             // 
             this.додаванняДеталейToolStripMenuItem.Name = "додаванняДеталейToolStripMenuItem";
-            this.додаванняДеталейToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.додаванняДеталейToolStripMenuItem.Text = "Додавання деталей";
+            this.додаванняДеталейToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.додаванняДеталейToolStripMenuItem.Text = "Add new detail";
             this.додаванняДеталейToolStripMenuItem.Click += new System.EventHandler(this.AddDetail);
             // 
             // вийтиToolStripMenuItem
@@ -105,21 +105,21 @@
             this.зОбліковогоЗаписуToolStripMenuItem,
             this.зПрограмиToolStripMenuItem});
             this.вийтиToolStripMenuItem.Name = "вийтиToolStripMenuItem";
-            this.вийтиToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.вийтиToolStripMenuItem.Text = "Вийти";
+            this.вийтиToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.вийтиToolStripMenuItem.Text = "Quit";
             // 
             // зОбліковогоЗаписуToolStripMenuItem
             // 
             this.зОбліковогоЗаписуToolStripMenuItem.Name = "зОбліковогоЗаписуToolStripMenuItem";
-            this.зОбліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.зОбліковогоЗаписуToolStripMenuItem.Text = "З облікового запису";
+            this.зОбліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зОбліковогоЗаписуToolStripMenuItem.Text = "LogOut";
             this.зОбліковогоЗаписуToolStripMenuItem.Click += new System.EventHandler(this.Logout);
             // 
             // зПрограмиToolStripMenuItem
             // 
             this.зПрограмиToolStripMenuItem.Name = "зПрограмиToolStripMenuItem";
-            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.зПрограмиToolStripMenuItem.Text = "З програми";
+            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зПрограмиToolStripMenuItem.Text = "Exit";
             this.зПрограмиToolStripMenuItem.Click += new System.EventHandler(this.Exit);
             // 
             // groupBox1
@@ -146,6 +146,55 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 7;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(268, 125);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "User information";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 95);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(14, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "#";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 72);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(14, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "#";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 50);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "#";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(14, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "#";
             // 
             // label3
             // 
@@ -195,19 +244,6 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 0;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(268, 125);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Інформація користувача";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBox1);
@@ -216,43 +252,7 @@
             this.groupBox3.Size = new System.Drawing.Size(330, 119);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Замовлення деталей";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "#";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "#";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 72);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "#";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 95);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "#";
+            this.groupBox3.Text = "Order detail list";
             // 
             // listBox1
             // 

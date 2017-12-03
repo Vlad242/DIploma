@@ -69,7 +69,7 @@
             this.groupBox1.Size = new System.Drawing.Size(710, 108);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ПОШУК";
+            this.groupBox1.Text = "SEARCH";
             // 
             // button4
             // 
@@ -143,12 +143,12 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "ID замовлення",
-            "Назва сервісу",
-            "Виробник",
-            "Модель",
-            "Дата",
-            "Статус"});
+            "Order ID",
+            "Service name",
+            "Producer",
+            "Model",
+            "Date",
+            "Status"});
             this.comboBox1.Location = new System.Drawing.Point(6, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
@@ -184,7 +184,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "OrderList";
-            this.Text = "Список замовлень";
+            this.Text = "Order list";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderList_FormClosing);
             this.Load += new System.EventHandler(this.OrderList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -38,22 +38,22 @@ namespace DIploma_repair.Admin
             try
             {
                 dataGridView1.Columns.Clear();
-                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT Detail_order.D_Order_id, Detail.Detail_name, Detail.Prod_country, Detail.Price, Detail_order.D_Order_date, Detail_order.D_Count, Worker.Worker_surname, Worker.Worker_name, Status.Status_name FROM Detail_order INNER JOIN Detail on(Detail_order.Detail_id=Detail.Detail_id) INNER JOIN Status on(Detail_order.Status_id=Status.Status_id) INNER JOIN Worker on(Worker.Worker_id=Detail_order.Worker_id);", conn);
+                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Detail_order.D_Order_id, Detail.Detail_name, Detail.Prod_country, Detail.Price, Detail_order.D_Order_date, Detail_order.D_Count, Worker.Worker_surname, Worker.Worker_name, Status.Status_name FROM Detail_order INNER JOIN Detail on(Detail_order.Detail_id=Detail.Detail_id) INNER JOIN Status on(Detail_order.Status_id=Status.Status_id) INNER JOIN Worker on(Worker.Worker_id=Detail_order.Worker_id);", conn);
                 DataSet ds = new DataSet();
                 mda.Fill(ds, "Detail_order");
                 dataGridView1.DataSource = ds.Tables["Detail_order"];
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
-                dataGridView1.Columns[1].HeaderText = "Назва деталі";
-                dataGridView1.Columns[2].HeaderText = "Країна-виробник";
-                dataGridView1.Columns[3].HeaderText = "Ціна";
-                dataGridView1.Columns[4].HeaderText = "Дата замовлення";
-                dataGridView1.Columns[5].HeaderText = "Кількість деталей";
-                dataGridView1.Columns[6].HeaderText = "Прізвище майстра";
-                dataGridView1.Columns[7].HeaderText = "Ім'я майстра";
-                dataGridView1.Columns[8].HeaderText = "Статус замовлення";
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Detail name";
+                dataGridView1.Columns[2].HeaderText = "Producing country";
+                dataGridView1.Columns[3].HeaderText = "Price";
+                dataGridView1.Columns[4].HeaderText = "Order date";
+                dataGridView1.Columns[5].HeaderText = "Number of parts";
+                dataGridView1.Columns[6].HeaderText = "Wizard surname";
+                dataGridView1.Columns[7].HeaderText = "Wizard name";
+                dataGridView1.Columns[8].HeaderText = "Order status";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -109,7 +109,7 @@ namespace DIploma_repair.Admin
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString().Contains("Дата"))
+            if (comboBox1.SelectedItem.ToString().Contains("date"))
             {
                 dateTimePicker1.Visible = true;
             }
@@ -126,22 +126,22 @@ namespace DIploma_repair.Admin
                 ReSearch();
 
                 dataGridView1.Columns.Clear();
-                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT Detail_order.D_Order_id, Detail.Detail_name, Detail.Prod_country, Detail.Price, Detail_order.D_Order_date, Detail_order.D_Count, Worker.Worker_surname, Worker.Worker_name, Status.Status_name FROM Detail_order INNER JOIN Detail on(Detail_order.Detail_id=Detail.Detail_id) INNER JOIN Status on(Detail_order.Status_id=Status.Status_id) INNER JOIN Worker on(Worker.Worker_id=Detail_order.Worker_id) WHERE" + Search + ";", conn);
+                MySqlDataAdapter mda = new MySqlDataAdapter("SELECT DISTINCT Detail_order.D_Order_id, Detail.Detail_name, Detail.Prod_country, Detail.Price, Detail_order.D_Order_date, Detail_order.D_Count, Worker.Worker_surname, Worker.Worker_name, Status.Status_name FROM Detail_order INNER JOIN Detail on(Detail_order.Detail_id=Detail.Detail_id) INNER JOIN Status on(Detail_order.Status_id=Status.Status_id) INNER JOIN Worker on(Worker.Worker_id=Detail_order.Worker_id) WHERE" + Search + ";", conn);
                 DataSet ds = new DataSet();
                 mda.Fill(ds, "Detail_order");
                 dataGridView1.DataSource = ds.Tables["Detail_order"];
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
-                dataGridView1.Columns[1].HeaderText = "Назва деталі";
-                dataGridView1.Columns[2].HeaderText = "Країна-виробник";
-                dataGridView1.Columns[3].HeaderText = "Ціна";
-                dataGridView1.Columns[4].HeaderText = "Дата замовлення";
-                dataGridView1.Columns[5].HeaderText = "Кількість деталей";
-                dataGridView1.Columns[6].HeaderText = "Прізвище майстра";
-                dataGridView1.Columns[7].HeaderText = "Ім'я майстра";
-                dataGridView1.Columns[8].HeaderText = "Статус замовлення";
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Detail name";
+                dataGridView1.Columns[2].HeaderText = "Producing country";
+                dataGridView1.Columns[3].HeaderText = "Price";
+                dataGridView1.Columns[4].HeaderText = "Order date";
+                dataGridView1.Columns[5].HeaderText = "Number of parts";
+                dataGridView1.Columns[6].HeaderText = "Wizard surname";
+                dataGridView1.Columns[7].HeaderText = "Wizard name";
+                dataGridView1.Columns[8].HeaderText = "Order status";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -184,7 +184,7 @@ namespace DIploma_repair.Admin
                 }
                 switch (comboBox1.Text)
                 {
-                    case "Ідентифікатор":
+                    case "Id":
                         {
                             if(Search == "")
                             {
@@ -197,7 +197,7 @@ namespace DIploma_repair.Admin
                            
                             break;
                         }
-                    case "Назва деталі":
+                    case "Item name":
                         {
                             if(Search == "")
                             {
@@ -209,7 +209,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Країна-виробник":
+                    case "Producing country":
                         {
                             if (Search == "")
                             {
@@ -221,7 +221,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Ціна":
+                    case "Price":
                         {
                             if (Search == "")
                             {
@@ -233,7 +233,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Дата замовлення":
+                    case "Order date":
                         {
                             if (Search == "")
                             {
@@ -245,7 +245,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Кількість деталей":
+                    case "Number of parts":
                         {
                             if (Search == "")
                             {
@@ -257,7 +257,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Прізвище майстра":
+                    case "The surname of the wizard":
                         {
                             if (Search == "")
                             {
@@ -269,7 +269,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Ім'я майстра":
+                    case "The name of the wizard":
                         {
                             if (Search == "")
                             {
@@ -281,7 +281,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Статус замовлення":
+                    case "Order status":
                         {
                             if (Search == "")
                             {
@@ -354,11 +354,11 @@ namespace DIploma_repair.Admin
                 streamWriter.Close();
                 fs.Close();
 
-                MessageBox.Show("Файл успішно збережено");
+                MessageBox.Show("File saved successfully");
             }
             catch
             {
-                MessageBox.Show("Помилка при збереженні файлу!");
+                MessageBox.Show("Saving file Error!");
             }
         }
 
@@ -428,11 +428,11 @@ namespace DIploma_repair.Admin
 
                 doc.Close();
 
-                MessageBox.Show("Pdf-документ збережено!");
+                MessageBox.Show("Pdf-document saved!");
             }
             catch (Exception)
             {
-                MessageBox.Show("Проблеми зі збереженням в PDF формат!");
+                MessageBox.Show("Problems with saving to PDF format!");
             }
         }
 

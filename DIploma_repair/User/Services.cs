@@ -31,8 +31,8 @@ namespace DIploma_repair.User
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "Назва";
-                dataGridView1.Columns[1].HeaderText = "Ціна(без урахування деталей)";
+                dataGridView1.Columns[0].HeaderText = "Name";
+                dataGridView1.Columns[1].HeaderText = "Price (without details)";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }

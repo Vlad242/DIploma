@@ -62,7 +62,7 @@
             this.groupBox1.Size = new System.Drawing.Size(414, 105);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ПОШУК";
+            this.groupBox1.Text = "SEARCH";
             // 
             // button3
             // 
@@ -103,15 +103,15 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Ідентифікатор",
-            "Назва деталі",
-            "Країна-виробник",
-            "Ціна",
-            "Дата замовлення",
-            "Кількість деталей",
-            "Прізвище майстра",
-            "Ім\'я майстра",
-            "Статус замовлення"});
+            "Id",
+            "Item name",
+            "Producing country",
+            "Price",
+            "Order date",
+            "Number of parts",
+            "The surname of the wizard",
+            "The name of the wizard",
+            "Order status"});
             this.comboBox1.Location = new System.Drawing.Point(6, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(218, 21);
@@ -149,7 +149,7 @@
             this.groupBox2.Size = new System.Drawing.Size(328, 105);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Панель керування експортом";
+            this.groupBox2.Text = "Export control panel";
             // 
             // button6
             // 
@@ -234,7 +234,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "DetailOrderList";
-            this.Text = "Звіт по замовленню деталей";
+            this.Text = "Report on ordering parts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailOrderList_FormClosing);
             this.Load += new System.EventHandler(this.DetailOrderList_Load);
             this.groupBox1.ResumeLayout(false);
