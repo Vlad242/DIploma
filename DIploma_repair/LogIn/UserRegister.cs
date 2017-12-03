@@ -477,7 +477,27 @@ namespace DIploma_repair.LogIn
                                             + pass + "', '" + textBox11.Text + "', '" + index + "')";
                                         MySqlCommand cmd = new MySqlCommand(sql, conn);
                                         cmd.ExecuteNonQuery();
+                                        //INSERT INTO Orders VALUES (null, 1, 1, 5, 'AN55SLRT12FF', 2, 'TEST', '2017:01:01', 'NULL', 10, 0);
                                         MessageBox.Show("Registration was successful!");
+
+                                        int worker_id = 0;
+                                        cmd = new MySqlCommand
+                                        {
+                                            Connection = conn,
+                                            CommandText = string.Format("SELECT MAX(Worker_id) FROM Worker;")
+                                        };
+                                        MySqlDataReader reader = cmd.ExecuteReader();
+                                        while (reader.Read())
+                                        {
+                                            worker_id = reader.GetInt32(0);
+                                        }
+                                        sql = "iINSERT INTO Orders(Order_id, User_id, Service_id, Worker_id, Serial_number" +
+                                            "Status_id,Description,Order_Date, Complete_set, Appearance, Order_price) VALUES (null, 1, 1, " + worker_id + ", 'AN55SLRT12FF', 2, 'TEST', '2017:01:01', 'NULL', 10, 0);";
+
+                                        cmd = new MySqlCommand(sql, conn);
+                                        cmd.ExecuteNonQuery();
+
+                                        reader.Close();
                                         conn.Close();
                                         LogIn lg = new LogIn();
                                         lg.Show();

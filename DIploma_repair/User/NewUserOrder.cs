@@ -147,7 +147,7 @@ namespace DIploma_repair.User
                 MySqlCommand cmd = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT Worker.Worker_id, COUNT(Orders.Order_id), Worker.Worker_name, Worker.Worker_surname FROM Worker INNER JOIN Orders on(Worker.Worker_id=Orders.Worker_id) WHERE Office_id='" + Office_id[comboBox7.SelectedIndex] + "';")
+                    CommandText = string.Format("SELECT Worker.Worker_id, COUNT(Orders.Order_id), Worker.Worker_name, Worker.Worker_surname FROM Worker INNER JOIN Orders on(Worker.Worker_id=Orders.Worker_id) WHERE Worker.Office_id=" + Office_id[comboBox7.SelectedIndex] + " GROUP BY Worker.Worker_id;")
                 };
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
