@@ -316,7 +316,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "WorkOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkOrder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkOrder_FormClosing);
             this.Load += new System.EventHandler(this.WorkOrder_Load);

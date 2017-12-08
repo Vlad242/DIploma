@@ -183,7 +183,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "WOrderList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WOrderList";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WOrderList_FormClosing);
             this.Load += new System.EventHandler(this.WOrderList_Load);

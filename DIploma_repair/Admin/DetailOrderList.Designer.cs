@@ -233,7 +233,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "DetailOrderList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report on ordering parts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailOrderList_FormClosing);
             this.Load += new System.EventHandler(this.DetailOrderList_Load);

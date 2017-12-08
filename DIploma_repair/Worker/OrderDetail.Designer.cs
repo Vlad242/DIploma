@@ -272,7 +272,9 @@
             this.ClientSize = new System.Drawing.Size(732, 261);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "OrderDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order detail";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderDetail_FormClosing);
             this.Load += new System.EventHandler(this.OrderDetail_Load);

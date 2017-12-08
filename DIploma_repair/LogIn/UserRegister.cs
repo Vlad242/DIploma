@@ -540,5 +540,12 @@ namespace DIploma_repair.LogIn
             }
 
         }
+
+        private void UserRegister_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            LogIn logIn = new LogIn();
+            logIn.Show();
+            this.Dispose();
+        }
     }
 }

@@ -422,7 +422,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AddDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Detail";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddDetail_FormClosing);
             this.Load += new System.EventHandler(this.AddDetail_Load);

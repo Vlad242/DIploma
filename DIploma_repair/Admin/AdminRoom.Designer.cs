@@ -111,14 +111,14 @@
             // зОбліковогоЗаписуToolStripMenuItem
             // 
             this.зОбліковогоЗаписуToolStripMenuItem.Name = "зОбліковогоЗаписуToolStripMenuItem";
-            this.зОбліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зОбліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.зОбліковогоЗаписуToolStripMenuItem.Text = "LogOut";
             this.зОбліковогоЗаписуToolStripMenuItem.Click += new System.EventHandler(this.Logout);
             // 
             // зПрограмиToolStripMenuItem
             // 
             this.зПрограмиToolStripMenuItem.Name = "зПрограмиToolStripMenuItem";
-            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.зПрограмиToolStripMenuItem.Text = "Exit";
             this.зПрограмиToolStripMenuItem.Click += new System.EventHandler(this.Exit);
             // 
@@ -270,6 +270,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AdminRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminRoom";

@@ -477,6 +477,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "NewUserOrder";
             this.Text = "Order";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewUserOrder_FormClosing);

@@ -467,8 +467,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "UserRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserRegister_FormClosing);
             this.Load += new System.EventHandler(this.UserRegister_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBoxWorker.ResumeLayout(false);

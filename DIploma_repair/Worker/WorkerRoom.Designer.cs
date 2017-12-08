@@ -117,14 +117,14 @@
             // провестиЗаняттяToolStripMenuItem
             // 
             this.провестиЗаняттяToolStripMenuItem.Name = "провестиЗаняттяToolStripMenuItem";
-            this.провестиЗаняттяToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.провестиЗаняттяToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.провестиЗаняттяToolStripMenuItem.Text = "Order list";
             this.провестиЗаняттяToolStripMenuItem.Click += new System.EventHandler(this.OrderList);
             // 
             // новеЗамовленняToolStripMenuItem
             // 
             this.новеЗамовленняToolStripMenuItem.Name = "новеЗамовленняToolStripMenuItem";
-            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.новеЗамовленняToolStripMenuItem.Text = "Order detail";
             this.новеЗамовленняToolStripMenuItem.Click += new System.EventHandler(this.OrderDetail);
             // 
@@ -140,14 +140,14 @@
             // зобліковогоЗаписуToolStripMenuItem
             // 
             this.зобліковогоЗаписуToolStripMenuItem.Name = "зобліковогоЗаписуToolStripMenuItem";
-            this.зобліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зобліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.зобліковогоЗаписуToolStripMenuItem.Text = "Logout";
             this.зобліковогоЗаписуToolStripMenuItem.Click += new System.EventHandler(this.Logout);
             // 
             // зПрограмиToolStripMenuItem
             // 
             this.зПрограмиToolStripMenuItem.Name = "зПрограмиToolStripMenuItem";
-            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.зПрограмиToolStripMenuItem.Text = "Exit";
             this.зПрограмиToolStripMenuItem.Click += new System.EventHandler(this.Exit);
             // 
@@ -253,7 +253,9 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "WorkerRoom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkerRoom";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkerRoom_FormClosing);
             this.Load += new System.EventHandler(this.WorkerRoom_Load);
