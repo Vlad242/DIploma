@@ -49,7 +49,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Services";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Services";
+            this.Text = "Сервіси";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Services_FormClosing);
             this.Load += new System.EventHandler(this.Services_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

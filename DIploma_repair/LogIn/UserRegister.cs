@@ -69,7 +69,7 @@ namespace DIploma_repair.LogIn
                             textBox8.Visible = true;
                             groupBoxUser.Visible = true;
                             label18.Visible = true;
-                            label18.Text = "CONFIRM!!!";
+                            label18.Text = "ПІДТВЕРДІТЬ!!!";
                             label18.ForeColor = Color.Red;
                             UserType = 0;
                         }
@@ -177,7 +177,7 @@ namespace DIploma_repair.LogIn
                     button1.Enabled = true;
                     textBox8.Visible = false;
                     label18.Visible = true;
-                    label18.Text = "CONFIRMED!!!";
+                    label18.Text = "ПІДТВЕРДЖЕНО!!!";
                     label18.ForeColor = Color.Green;
                     textBox8.Enabled = false;
                     textBox8.Visible = false;
@@ -189,7 +189,7 @@ namespace DIploma_repair.LogIn
                     button1.Enabled = false;
                     textBox8.Visible = true;
                     label18.Visible = true;
-                    label18.Text = "CONFIRM!!!";
+                    label18.Text = "ПІДТВЕРДІТЬ!!!";
                     label18.ForeColor = Color.Red;
                 }
             }   
@@ -215,13 +215,13 @@ namespace DIploma_repair.LogIn
 
                 if (flag)
                 {
-                    label12.Text = "Allowed!";
+                    label12.Text = "Прийнятний!";
                     label12.ForeColor = Color.Green;
                     this.ConfirmedLogin = true;
                 }
                 else
                 {
-                    label12.Text = "Busy!";
+                    label12.Text = "Зайнятий!";
                     label12.ForeColor = Color.Red;
                     this.ConfirmedLogin = false;
                 }
@@ -239,13 +239,13 @@ namespace DIploma_repair.LogIn
 
                 if (flag)
                 {
-                    label12.Text = "Allowed!";
+                    label12.Text = "Прийнятний!";
                     label12.ForeColor = Color.Green;
                     this.ConfirmedLogin = true;
                 }
                 else
                 {
-                    label12.Text = "Busy!";
+                    label12.Text = "Додайте Admin!";
                     label12.ForeColor = Color.Red;
                     this.ConfirmedLogin = false;
                 }
@@ -257,17 +257,17 @@ namespace DIploma_repair.LogIn
         {
             if (textBox5.TextLength < 8)
             {
-                label14.Text = "So short!";
+                label14.Text = "Короткий!";
                 label14.ForeColor = Color.Red;
             }
             else
             {
-                label14.Text = "Allowed!";
+                label14.Text = "Прийнятно!";
                 label14.ForeColor = Color.Green;
             }
             if (textBox6.Text == " ")
             {
-                label13.Text = "Wrong!";
+                label13.Text = "Невірний!";
                 label13.ForeColor = Color.Red;
             }
             else
@@ -280,13 +280,13 @@ namespace DIploma_repair.LogIn
         {
             if(textBox5.Text == textBox6.Text && textBox6.TextLength > 7)
             {
-                label13.Text = "Confirm!";
+                label13.Text = "Прийнятний!";
                 label13.ForeColor = Color.Green;
                 this.ConfirmedPassword = true;
             }
             else
             {
-                label13.Text = "Wrong!";
+                label13.Text = "Невірний!";
                 label13.ForeColor = Color.Red;
                 this.ConfirmedPassword = false;
             }
@@ -296,13 +296,13 @@ namespace DIploma_repair.LogIn
         {
             if (textBox10.Text.Contains("@"))
             {
-                label15.Text = "Allowed!";
+                label15.Text = "Прийнятний!";
                 label15.ForeColor = Color.Green;
                 this.ConfirmedEmail = true;
             }
             else
             {
-                label15.Text = "Wrong email!";
+                label15.Text = "Невірний!";
                 label15.ForeColor = Color.Red;
                 this.ConfirmedEmail = false;
             }
@@ -346,7 +346,7 @@ namespace DIploma_repair.LogIn
                                                 + pass + "', '" + textBox9.Text + "', '" + textBox10.Text + "')";
                                             MySqlCommand cmd = new MySqlCommand(sql, conn);
                                             cmd.ExecuteNonQuery();
-                                            MessageBox.Show("Registration was successful!");
+                                            MessageBox.Show("Реєстрація була успішною!");
                                             conn.Close();
                                             LogIn lg = new LogIn();
                                             lg.Show();
@@ -354,27 +354,26 @@ namespace DIploma_repair.LogIn
                                         }
                                         catch (Exception)
                                         {
-                                            MessageBox.Show("Something wrong!");
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Not all fields are full! Please check correct fields!");
+                                        MessageBox.Show("Не всі поля заповнені! Будь-ласка, перевірте правильність завонення полів!");
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("PASSWORD INCORRECT!");
+                                    MessageBox.Show("Помилка паролю!");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("LOGIN INCORRECT!");
+                                MessageBox.Show("Помилка логіну!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("ADMIN NOT CONFIRMED S PASSWORD!");
+                            MessageBox.Show("Адміністратор не підтвердив паролю!");
                         }
                         break;
                     }
@@ -412,7 +411,7 @@ namespace DIploma_repair.LogIn
                                                 + pass + "', '" + textBox9.Text + "', '" + textBox10.Text + "')";
                                             MySqlCommand cmd = new MySqlCommand(sql, conn);
                                             cmd.ExecuteNonQuery();
-                                            MessageBox.Show("Registration was successful!");
+                                            MessageBox.Show("Реєстрація була успішною!");
                                             conn.Close();
                                             LogIn lg = new LogIn();
                                             lg.Show();
@@ -420,27 +419,26 @@ namespace DIploma_repair.LogIn
                                         }
                                         catch (Exception)
                                         {
-                                            MessageBox.Show("Something wrong!");
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Not all fields are full! Please check correct fields!");
+                                        MessageBox.Show("Не всі поля заповнені! Будь-ласка, перевірте правильність заповнення полів!");
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("EMAIL INCORRECT!");
+                                    MessageBox.Show("Помилка E-mail адреси!");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("PASSWORD INCORRECT!");
+                                MessageBox.Show("Помилка паролю!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("LOGIN INCORRECT!");
+                            MessageBox.Show("Помилка логіну!");
                         }
                         break;
                     }
@@ -478,7 +476,7 @@ namespace DIploma_repair.LogIn
                                         MySqlCommand cmd = new MySqlCommand(sql, conn);
                                         cmd.ExecuteNonQuery();
                                         //INSERT INTO Orders VALUES (null, 1, 1, 5, 'AN55SLRT12FF', 2, 'TEST', '2017:01:01', 'NULL', 10, 0);
-                                        MessageBox.Show("Registration was successful!");
+                                        MessageBox.Show("Реєстрація була успішною!");
 
                                         int worker_id = 0;
                                         cmd = new MySqlCommand
@@ -505,28 +503,27 @@ namespace DIploma_repair.LogIn
                                     }
                                     catch (Exception)
                                     {
-                                        MessageBox.Show("Something wrong!");
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Not all fields are full! Please check correct fields!");
+                                    MessageBox.Show("Не всі поля заповнені! Будь-ласка, перевірте правильність заповнення полів!");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("PASSWORD INCORRECT!");
+                                MessageBox.Show("Помилка пароля!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("LOGIN INCORRECT!");
+                            MessageBox.Show("Помилка логіну!");
                         }
                         break;
                     }
                 default:
                     {
-                        MessageBox.Show("USER NOT SELECTED!");
+                        MessageBox.Show("Користувач не обраний!");
                         break;
                     }
             }

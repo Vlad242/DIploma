@@ -157,7 +157,7 @@ namespace DIploma_repair.Admin
                      item[comboBox3.SelectedIndex] + "','" + textBox1.Text + "');";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Model " + textBox1.Text + " was added to database!");
+                MessageBox.Show("Модель " + textBox1.Text + " було додано до бази даних!");
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
                 comboBox3.SelectedIndex = -1;
@@ -177,7 +177,7 @@ namespace DIploma_repair.Admin
                       model[comboBox7.SelectedIndex] + ",'" + textBox2.Text + "');";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Device with serial " + textBox2.Text + " was added to database!");
+                MessageBox.Show("Пристрій із серійним номером " + textBox2.Text + " було додано до бази даних!");
                 comboBox7.SelectedIndex = -1;
                 comboBox6.SelectedIndex = -1;
                 comboBox5.SelectedIndex = -1;

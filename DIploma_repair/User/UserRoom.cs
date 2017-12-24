@@ -45,13 +45,13 @@ namespace DIploma_repair.User
                 MySqlDataReader reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
-                    this.Text = "User cabinet " + reader.GetString(0) + " " + reader.GetString(1);
-                    label1.Text = "Name: " + reader.GetString(0);
-                    label2.Text = "Surname: " + reader.GetString(1);
-                    label3.Text = "Father name: " + reader.GetString(2);
-                    label4.Text = "Birthdate: " + reader.GetString(3).Remove(10); ;
-                    label5.Text = "Phone number: " + reader.GetString(4);
-                    label6.Text = "Address: " + reader.GetString(5);
+                    this.Text = "Кабінет користувачаt " + reader.GetString(0) + " " + reader.GetString(1);
+                    label1.Text = "Ім'я: " + reader.GetString(0);
+                    label2.Text = "Прізвище: " + reader.GetString(1);
+                    label3.Text = "По батькові: " + reader.GetString(2);
+                    label4.Text = "Дата народження: " + reader.GetString(3).Remove(10); ;
+                    label5.Text = "Номер телефону: " + reader.GetString(4);
+                    label6.Text = "Адреса: " + reader.GetString(5);
                     label7.Text = "E-mail: " + reader.GetString(6);
                 }
                 reader.Close();
@@ -77,11 +77,11 @@ namespace DIploma_repair.User
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "Service";
-                dataGridView1.Columns[1].HeaderText = "Brand";
-                dataGridView1.Columns[2].HeaderText = "Model";
-                dataGridView1.Columns[3].HeaderText = "Order date";
-                dataGridView1.Columns[4].HeaderText = "Status";
+                dataGridView1.Columns[0].HeaderText = "Сервіс";
+                dataGridView1.Columns[1].HeaderText = "Бренд";
+                dataGridView1.Columns[2].HeaderText = "Модель";
+                dataGridView1.Columns[3].HeaderText = "Дата замовлення";
+                dataGridView1.Columns[4].HeaderText = "Статус";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();

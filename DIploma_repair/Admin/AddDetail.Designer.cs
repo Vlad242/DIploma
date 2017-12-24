@@ -43,10 +43,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,14 +61,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -83,7 +87,7 @@
             this.groupBox1.Size = new System.Drawing.Size(333, 99);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New detail";
+            this.groupBox1.Text = "Нова деталь";
             // 
             // button1
             // 
@@ -91,7 +95,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 20);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Add";
+            this.button1.Text = "Додати";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -170,7 +174,7 @@
             this.groupBox2.Size = new System.Drawing.Size(333, 99);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detail-model bind ";
+            this.groupBox2.Text = "Прив\'язка деталі до моделі";
             // 
             // comboBox2
             // 
@@ -194,7 +198,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 26);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Bind";
+            this.button2.Text = "Прив\'язати";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -218,56 +222,101 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.listBox1);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.comboBox3);
             this.groupBox3.Location = new System.Drawing.Point(12, 222);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(609, 252);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Barcode detail scanner";
+            this.groupBox3.Text = "Сканер штрих-кодів";
             // 
-            // listBox2
+            // label11
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(345, 133);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(256, 108);
-            this.listBox2.TabIndex = 18;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(415, 126);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(109, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Список замовлення";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(436, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(76, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Додані деталі";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button5);
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.textBox3);
+            this.groupBox6.Controls.Add(this.comboBox3);
+            this.groupBox6.Location = new System.Drawing.Point(9, 154);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(318, 91);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Реєстрація деталей";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(9, 208);
+            this.button5.Location = new System.Drawing.Point(32, 62);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(312, 38);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Add";
+            this.button5.Size = new System.Drawing.Size(252, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Додати";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 184);
+            this.label8.Location = new System.Drawing.Point(14, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Code from reader";
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Код (зі сканера)";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 157);
+            this.label7.Location = new System.Drawing.Point(13, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Detail";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Деталь";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(108, 40);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(204, 20);
+            this.textBox3.TabIndex = 19;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(108, 13);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(204, 21);
+            this.comboBox3.TabIndex = 18;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(345, 146);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(256, 95);
+            this.listBox2.TabIndex = 18;
             // 
             // groupBox4
             // 
@@ -283,16 +332,16 @@
             this.groupBox4.Size = new System.Drawing.Size(318, 129);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Scanner control panel";
+            this.groupBox4.Text = "Панель керування сканером";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(88, 70);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(69, 17);
+            this.checkBox1.Size = new System.Drawing.Size(89, 17);
             this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "All format";
+            this.checkBox1.Text = "Всі формати";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
@@ -301,9 +350,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 49);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Format";
+            this.label9.Text = "Формат коду";
             // 
             // comboBox5
             // 
@@ -337,11 +386,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(22, 93);
+            this.button4.Location = new System.Drawing.Point(18, 93);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 30);
+            this.button4.Size = new System.Drawing.Size(141, 30);
             this.button4.TabIndex = 15;
-            this.button4.Text = "Start";
+            this.button4.Text = "Запустити сканування";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
@@ -351,7 +400,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(128, 30);
             this.button3.TabIndex = 14;
-            this.button3.Text = "Stop";
+            this.button3.Text = "Зупинити сканування";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
@@ -360,9 +409,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Device";
+            this.label4.Text = "Пристрій";
             // 
             // comboBox4
             // 
@@ -375,25 +424,10 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(345, 19);
+            this.listBox1.Location = new System.Drawing.Point(347, 28);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(256, 108);
+            this.listBox1.Size = new System.Drawing.Size(256, 95);
             this.listBox1.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(104, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(217, 20);
-            this.textBox3.TabIndex = 10;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(104, 154);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(217, 21);
-            this.comboBox3.TabIndex = 9;
             // 
             // pictureBox1
             // 
@@ -411,7 +445,7 @@
             this.groupBox5.Size = new System.Drawing.Size(270, 204);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Scanner screen";
+            this.groupBox5.Text = "Камера сканера";
             // 
             // AddDetail
             // 
@@ -425,7 +459,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AddDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Detail";
+            this.Text = "Додавання деталей";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddDetail_FormClosing);
             this.Load += new System.EventHandler(this.AddDetail_Load);
             this.groupBox1.ResumeLayout(false);
@@ -435,6 +469,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -460,22 +496,25 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

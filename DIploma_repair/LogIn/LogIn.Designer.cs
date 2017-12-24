@@ -62,9 +62,9 @@
             this.checkBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checkBox3.Location = new System.Drawing.Point(236, 161);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(105, 19);
+            this.checkBox3.Size = new System.Drawing.Size(120, 19);
             this.checkBox3.TabIndex = 21;
-            this.checkBox3.Text = "Show password";
+            this.checkBox3.Text = "Показати пароль";
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox3.UseVisualStyleBackColor = false;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.CheckBox3_CheckedChanged);
@@ -100,9 +100,9 @@
             this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checkBox2.Location = new System.Drawing.Point(226, 302);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(133, 23);
+            this.checkBox2.Size = new System.Drawing.Size(158, 23);
             this.checkBox2.TabIndex = 18;
-            this.checkBox2.Text = "Not registered?";
+            this.checkBox2.Text = "Не зареєстровані?";
             this.checkBox2.UseVisualStyleBackColor = false;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
@@ -122,9 +122,9 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(12, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 26);
+            this.label3.Size = new System.Drawing.Size(101, 26);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Password:";
+            this.label3.Text = "Пароль:";
             // 
             // label2
             // 
@@ -133,20 +133,20 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(12, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 26);
+            this.label2.Size = new System.Drawing.Size(81, 26);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Login:";
+            this.label2.Text = "Логін:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(128, 37);
+            this.label4.Location = new System.Drawing.Point(99, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 31);
+            this.label4.Size = new System.Drawing.Size(168, 31);
             this.label4.TabIndex = 13;
-            this.label4.Text = "User login";
+            this.label4.Text = "Авторизація";
             // 
             // pictureBox1
             // 

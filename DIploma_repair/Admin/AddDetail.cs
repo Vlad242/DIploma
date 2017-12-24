@@ -99,7 +99,7 @@ namespace DIploma_repair.Admin
                     textBox1.Text + "','" + textBox2.Text + "','" + numericUpDown1.Value + "');";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Detail " + textBox1.Text + " was added!");
+                    MessageBox.Show("Деталь " + textBox1.Text + " зареєстровано!");
                     AddDetail_Load(null, null);
                 }
                 catch(Exception)
@@ -109,7 +109,7 @@ namespace DIploma_repair.Admin
             }
             else
             {
-                MessageBox.Show("Check all fields!");
+                MessageBox.Show("Перевірте заповненість полів!");
             }
         }
 
@@ -124,17 +124,17 @@ namespace DIploma_repair.Admin
                     detail[comboBox1.SelectedIndex] + "," + model[comboBox2.SelectedIndex] + ");";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Bind accept!");
+                    MessageBox.Show("Прив'язку виконано!");
                 }
                 else
                 {
-                    MessageBox.Show("Сhoose the model and the detail!");
+                    MessageBox.Show("Оберіть модель та деталь зі списків!");
                 }
                
             }
             catch (Exception)
             {
-
+                MessageBox.Show("ПРив'язка не потребується!");
             }
         }
 
@@ -168,7 +168,7 @@ namespace DIploma_repair.Admin
             }
             else
             {
-                MessageBox.Show("You have runnable scanning proccess!");
+                MessageBox.Show("Процес сканування вже активний!");
             }
         }
 
@@ -218,13 +218,13 @@ namespace DIploma_repair.Admin
             }
             else
             {
-                MessageBox.Show("Opened reader stream no detected!");
+                MessageBox.Show("Потік зчитування сканера не знайдено!");
             }
         }
-
+        
         private void Button5_Click(object sender, EventArgs e)
         {
-            if(textBox3.Text != "" && textBox3.Text != " ")
+            if (textBox3.Text != "" && textBox3.Text != " ")
             {
                 try
                 {
@@ -232,8 +232,8 @@ namespace DIploma_repair.Admin
                       textBox3.Text + "'," + detail[comboBox3.SelectedIndex] + ");";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Detail was added to database!");
-                    listBox1.Items.Add(comboBox3.SelectedItem.ToString() + " - " + textBox3.Text );
+                    MessageBox.Show("Деталь додано до бази даних!");
+                    listBox1.Items.Add(comboBox3.SelectedItem.ToString() + " - " + textBox3.Text);
                     textBox3.Clear();
                     /////////////////////
                     int count = 0;
@@ -279,7 +279,7 @@ namespace DIploma_repair.Admin
                         }
                         reader2.Close();
                     }
-                   
+
                 }
                 catch (Exception)
                 {

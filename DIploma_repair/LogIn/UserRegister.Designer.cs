@@ -87,7 +87,7 @@
             this.groupBox1.Size = new System.Drawing.Size(431, 398);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Form for user registration";
+            this.groupBox1.Text = "Реєстраційні дані користувача";
             // 
             // groupBoxWorker
             // 
@@ -95,22 +95,22 @@
             this.groupBoxWorker.Controls.Add(this.comboBox3);
             this.groupBoxWorker.Controls.Add(this.label16);
             this.groupBoxWorker.Controls.Add(this.textBox11);
-            this.groupBoxWorker.Location = new System.Drawing.Point(15, 317);
+            this.groupBoxWorker.Location = new System.Drawing.Point(15, 316);
             this.groupBoxWorker.Name = "groupBoxWorker";
             this.groupBoxWorker.Size = new System.Drawing.Size(410, 72);
             this.groupBoxWorker.TabIndex = 40;
             this.groupBoxWorker.TabStop = false;
-            this.groupBoxWorker.Text = "Additional Information:";
+            this.groupBoxWorker.Text = "Додаткова інформація";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(11, 43);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.Size = new System.Drawing.Size(34, 13);
             this.label17.TabIndex = 44;
             this.label17.Tag = "";
-            this.label17.Text = "Office:";
+            this.label17.Text = "Офіс:";
             // 
             // comboBox3
             // 
@@ -125,10 +125,10 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(10, 19);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(59, 13);
+            this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 38;
             this.label16.Tag = "";
-            this.label16.Text = "Profession:";
+            this.label16.Text = "Професія:";
             // 
             // textBox11
             // 
@@ -149,7 +149,7 @@
             this.groupBoxUser.Size = new System.Drawing.Size(410, 72);
             this.groupBoxUser.TabIndex = 39;
             this.groupBoxUser.TabStop = false;
-            this.groupBoxUser.Text = "Additional Information:";
+            this.groupBoxUser.Text = "Додаткова інформація";
             // 
             // label15
             // 
@@ -183,10 +183,10 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(10, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(48, 13);
+            this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 38;
             this.label10.Tag = "";
-            this.label10.Text = "Address:";
+            this.label10.Text = "Адреса:";
             // 
             // textBox9
             // 
@@ -211,24 +211,24 @@
             this.groupBox3.Size = new System.Drawing.Size(410, 100);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Information for access:";
+            this.groupBox3.Text = "Інформація для доступу";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(111, 19);
+            this.textBox3.Location = new System.Drawing.Point(119, 19);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(198, 20);
+            this.textBox3.Size = new System.Drawing.Size(190, 20);
             this.textBox3.TabIndex = 18;
             this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 18);
+            this.label6.Location = new System.Drawing.Point(6, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Login:";
+            this.label6.Text = "Логін:";
             // 
             // label14
             // 
@@ -242,12 +242,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 42);
+            this.label1.Location = new System.Drawing.Point(6, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 19;
             this.label1.Tag = "";
-            this.label1.Text = "Password:";
+            this.label1.Text = "Пароль:";
             // 
             // label13
             // 
@@ -261,12 +261,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 68);
+            this.label7.Location = new System.Drawing.Point(6, 71);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.Size = new System.Drawing.Size(107, 13);
             this.label7.TabIndex = 20;
             this.label7.Tag = "";
-            this.label7.Text = "Confirm password:";
+            this.label7.Text = "Підтвердіть пароль:";
             // 
             // label12
             // 
@@ -279,18 +279,18 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(111, 45);
+            this.textBox5.Location = new System.Drawing.Point(119, 45);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(198, 20);
+            this.textBox5.Size = new System.Drawing.Size(190, 20);
             this.textBox5.TabIndex = 21;
             this.textBox5.UseSystemPasswordChar = true;
             this.textBox5.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(111, 68);
+            this.textBox6.Location = new System.Drawing.Point(119, 68);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(198, 20);
+            this.textBox6.Size = new System.Drawing.Size(190, 20);
             this.textBox6.TabIndex = 22;
             this.textBox6.UseSystemPasswordChar = true;
             this.textBox6.TextChanged += new System.EventHandler(this.TextBox6_TextChanged);
@@ -316,7 +316,7 @@
             this.groupBox2.Size = new System.Drawing.Size(410, 185);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "General";
+            this.groupBox2.Text = "Загальна інформація";
             // 
             // label18
             // 
@@ -339,27 +339,27 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(10, 153);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 13);
+            this.label9.Size = new System.Drawing.Size(95, 13);
             this.label9.TabIndex = 42;
-            this.label9.Text = "Phone number:";
+            this.label9.Text = "Номер телефону:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Name:";
+            this.label2.Text = "Ім\'я:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Surname:";
+            this.label3.Text = "Прізвище:";
             // 
             // textBox7
             // 
@@ -374,27 +374,27 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Father name:";
+            this.label4.Text = "По батькові:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(10, 126);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.Size = new System.Drawing.Size(101, 13);
             this.label8.TabIndex = 39;
-            this.label8.Text = "Birth date:";
+            this.label8.Text = "Дата народження:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(10, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Who are you?";
+            this.label5.Text = "Хто ви?";
             // 
             // dateTimePicker1
             // 
@@ -455,7 +455,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 189);
             this.button1.TabIndex = 19;
-            this.button1.Text = "Register";
+            this.button1.Text = "Реєстрація";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -470,7 +470,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "UserRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registration form";
+            this.Text = "Форма реєстрації";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserRegister_FormClosing);
             this.Load += new System.EventHandler(this.UserRegister_Load);
             this.groupBox1.ResumeLayout(false);

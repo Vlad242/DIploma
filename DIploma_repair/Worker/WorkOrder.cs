@@ -34,12 +34,12 @@ namespace DIploma_repair.Worker
         {
             try
             {
-                label1.Text = "Service:";
-                label2.Text = "Device:";
-                label3.Text = "Serial:";
-                label4.Text = "Condition:";
-                label5.Text = "Complete set:";
-                label6.Text = "Description:";
+                label1.Text = "Сервіс:";
+                label2.Text = "Пристрій:";
+                label3.Text = "Серійний номер:";
+                label4.Text = "Стан:";
+                label5.Text = "Комплект:";
+                label6.Text = "Опис:";
 
 
                 MySqlCommand cmd2 = new MySqlCommand
@@ -80,7 +80,7 @@ namespace DIploma_repair.Worker
 
                 listBox1.Items.Clear();
                 details.Clear();
-                listBox1.Items.Add("Name -> Producing country ->Price");
+                listBox1.Items.Add("Назва -> Країна виробник ->Ціна");
                 cmd2 = new MySqlCommand
                 {
                     Connection = conn,
@@ -152,11 +152,11 @@ namespace DIploma_repair.Worker
                         Send();
                     }
                     WorkOrder_Load(null, null);
-                    MessageBox.Show("Status changed to " + comboBox2.SelectedItem);
+                    MessageBox.Show("Статус змінений на " + comboBox2.SelectedItem);
                 }
                 else
                 {
-                    MessageBox.Show("Select status!");
+                    MessageBox.Show("Оберіть статус для заміни!");
                 }
                
             }
@@ -186,7 +186,7 @@ namespace DIploma_repair.Worker
             Mailer.Mailer mailer = new Mailer.Mailer();
             mailer.SendMail(userMail, "example@gmail.com", "", subject, body);
 
-            MessageBox.Show("Order complete!");
+            MessageBox.Show("Замовлення виконано!");
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -216,7 +216,7 @@ namespace DIploma_repair.Worker
                 cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Detail " + comboBox1.Text + " was addet to list!General price updated!");
+                MessageBox.Show("Деталь " + comboBox1.Text + " додано до замовлення!Загальна ціна замовлення змінена " + (currentPrice + price[comboBox1.SelectedIndex]) + "!");
                 WorkOrder_Load(null, null);
                 comboBox1.SelectedIndex = 0;
             }

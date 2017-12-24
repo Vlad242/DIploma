@@ -26,7 +26,7 @@ namespace DIploma_repair.Worker
 
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "yyy:MM:dd";
+            dateTimePicker1.CustomFormat = "yyy-MM-dd";
             dateTimePicker1.Visible = false;
         }
 
@@ -43,12 +43,12 @@ namespace DIploma_repair.Worker
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "ID";
-                dataGridView1.Columns[1].HeaderText = "Service name";
-                dataGridView1.Columns[2].HeaderText = "Brand";
-                dataGridView1.Columns[3].HeaderText = "Model";
-                dataGridView1.Columns[4].HeaderText = "Order date";
-                dataGridView1.Columns[5].HeaderText = "Status";
+                dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
+                dataGridView1.Columns[1].HeaderText = "Сервіс";
+                dataGridView1.Columns[2].HeaderText = "Виробник";
+                dataGridView1.Columns[3].HeaderText = "Модель";
+                dataGridView1.Columns[4].HeaderText = "Дата";
+                dataGridView1.Columns[5].HeaderText = "Статус";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 ReColorGrid();
@@ -103,12 +103,12 @@ namespace DIploma_repair.Worker
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "ID";
-                dataGridView1.Columns[1].HeaderText = "Service name";
-                dataGridView1.Columns[2].HeaderText = "Brand";
-                dataGridView1.Columns[3].HeaderText = "Model";
-                dataGridView1.Columns[4].HeaderText = "Order date";
-                dataGridView1.Columns[5].HeaderText = "Status";
+                dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
+                dataGridView1.Columns[1].HeaderText = "Сервіс";
+                dataGridView1.Columns[2].HeaderText = "Виробник";
+                dataGridView1.Columns[3].HeaderText = "Модель";
+                dataGridView1.Columns[4].HeaderText = "Дата";
+                dataGridView1.Columns[5].HeaderText = "Статус";
 
                 ReColorGrid();
             }
@@ -152,40 +152,40 @@ namespace DIploma_repair.Worker
                 }
                 switch (comboBox1.Text)
                 {
-                    case "Order ID":
+                    case "Ідентифікатор":
                         {
                             addSearch += "and Orders.Order_id" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Order ID " + operation + " " + textBox2.Text;
+                            listText = "Ідентифікатор " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Service name":
+                    case "Сервіс":
                         {
                             addSearch += "and Service.Service_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Service name " + operation + " " + textBox2.Text;
+                            listText = "Сервіс " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Producer":
+                    case "Виробник":
                         {
                             addSearch += "and Manufacturer.M_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Producer " + operation + " " + textBox2.Text;
+                            listText = "Виробник " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Model":
+                    case "Модель":
                         {
                             addSearch += "and Model.Model_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Model " + operation + " " + textBox2.Text;
+                            listText = "Модель " + operation + " " + textBox2.Text;
                             break;
                         }
-                    case "Date":
+                    case "Дата":
                         {
                             addSearch += "and Orders.Order_Date='" + textBox2.Text + "' ";
-                            listText = "Date = " + textBox2.Text;
+                            listText = "Дата = " + textBox2.Text;
                             break;
                         }
-                    case "Status":
+                    case "Статус":
                         {
                             addSearch += "and Status.Status_name" + operation + "'" + textBox2.Text + "' ";
-                            listText = "Status " + operation + " " + textBox2.Text;
+                            listText = "Статус " + operation + " " + textBox2.Text;
                             break;
                         }
                     default:
@@ -283,7 +283,7 @@ namespace DIploma_repair.Worker
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "Date")
+            if (comboBox1.SelectedItem.ToString() == "Дата")
             {
                 dateTimePicker1.Visible = true;
             }

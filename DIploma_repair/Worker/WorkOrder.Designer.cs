@@ -68,7 +68,7 @@
             this.groupBox2.Size = new System.Drawing.Size(391, 190);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Details";
+            this.groupBox2.Text = "Деталі";
             // 
             // listBox1
             // 
@@ -97,7 +97,7 @@
             this.groupBox1.Size = new System.Drawing.Size(391, 181);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General";
+            this.groupBox1.Text = "Загальна інформація";
             // 
             // label10
             // 
@@ -214,7 +214,7 @@
             this.groupBox3.Size = new System.Drawing.Size(347, 181);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Status";
+            this.groupBox3.Text = "Статус";
             // 
             // groupBox5
             // 
@@ -226,7 +226,7 @@
             this.groupBox5.Size = new System.Drawing.Size(332, 127);
             this.groupBox5.TabIndex = 17;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Set status";
+            this.groupBox5.Text = "Встановлення статусу";
             // 
             // button2
             // 
@@ -234,7 +234,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 49);
             this.button2.TabIndex = 16;
-            this.button2.Text = "SET";
+            this.button2.Text = "Встановити";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -243,9 +243,9 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(6, 25);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.Size = new System.Drawing.Size(47, 13);
             this.label14.TabIndex = 18;
-            this.label14.Text = "Status list";
+            this.label14.Text = "Статуси";
             // 
             // comboBox2
             // 
@@ -278,7 +278,7 @@
             this.groupBox4.Size = new System.Drawing.Size(347, 181);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Detail add";
+            this.groupBox4.Text = "Додати деталь до замовлення";
             // 
             // button1
             // 
@@ -286,18 +286,18 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 49);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Add to order";
+            this.button1.Text = "Додати до замовлення";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 56);
+            this.label11.Location = new System.Drawing.Point(12, 53);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 13);
+            this.label11.Size = new System.Drawing.Size(55, 26);
             this.label11.TabIndex = 12;
-            this.label11.Text = "All detail";
+            this.label11.Text = "Доступні \r\nдеталі";
             // 
             // comboBox1
             // 
@@ -319,7 +319,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "WorkOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WorkOrder";
+            this.Text = "Обробка замовлення";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkOrder_FormClosing);
             this.Load += new System.EventHandler(this.WorkOrder_Load);
             this.groupBox2.ResumeLayout(false);

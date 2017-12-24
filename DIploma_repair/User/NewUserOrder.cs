@@ -219,7 +219,7 @@ namespace DIploma_repair.User
             else
             {
 
-                MessageBox.Show("Please select Manufacturer :)");
+                MessageBox.Show("Будь ласка, оберіть виробника :)");
             }
 
         }
@@ -256,7 +256,7 @@ namespace DIploma_repair.User
             }
             else
             {
-                MessageBox.Show("Please select Item type :)");
+                MessageBox.Show("Будь ласка, оберіть підтип :)");
             }
         }
 
@@ -410,7 +410,7 @@ namespace DIploma_repair.User
                         cmd.ExecuteNonQuery();
                     }
                     Send();
-                    MessageBox.Show("Application approved!");
+                    MessageBox.Show("Замовлення прийнято на обробку!");
                     this.Close();
                 }
                 else
@@ -424,14 +424,14 @@ namespace DIploma_repair.User
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
                     Send();
-                    MessageBox.Show("Application approved!");
+                    MessageBox.Show("Замовлення прийнято на обробку!");
                     this.Close();
                 }
 
             }
             else
             {
-                MessageBox.Show("Please check required fiqlds mark * !");
+                MessageBox.Show("Перевірте заповненість полів позначених *!");
             }
         }
 
@@ -513,11 +513,11 @@ namespace DIploma_repair.User
         {
             if (comboBox1.Text == "replacement parts" || comboBox1.Text == "order parts")
             {
-                label13.Text = "Detail *";
+                label13.Text = "Деталі *";
             }
             else
             {
-                label13.Text = "Detail";
+                label13.Text = "Деталі";
             }
         }
 

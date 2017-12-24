@@ -21,7 +21,7 @@ namespace DIploma_repair.User
             conn.Open();
             richTextBox1.ReadOnly = true;
             richTextBox2.ReadOnly = true;
-            this.Text = "Order №" + Index;
+            this.Text = "Замовлення №" + Index;
         }
 
         private void CurrentOrderInfo_Load(object sender, System.EventArgs e)
@@ -37,23 +37,23 @@ namespace DIploma_repair.User
                 while (reader.Read())
                 {
 
-                    label12.Text = "ID:";
-                    label13.Text = "Service:";
-                    label14.Text = "The order serves:";
-                    label15.Text = "Office:";
-                    label16.Text = "Device:";
-                    label17.Text = "Serial:";
-                    label18.Text = "Score:";
-                    label19.Text = "Order price:";
-                    label20.Text = "Status:";
-                    label7.Text = "Complete set:";
-                    label11.Text = "Description:";
-                    label21.Text = "Order date:";
+                    label12.Text = "Ідентфікатор:";
+                    label13.Text = "Сервіс:";
+                    label14.Text = "Обслуговує:";
+                    label15.Text = "Офіс:";
+                    label16.Text = "Пристрій:";
+                    label17.Text = "Серійний номер:";
+                    label18.Text = "Оцінка стану:";
+                    label19.Text = "Ціна замовлення:";
+                    label20.Text = "Статус:";
+                    label7.Text = "Комплект поставки:";
+                    label11.Text = "Опис:";
+                    label21.Text = "Дата замовлення:";
 
                     label1.Text = Index.ToString();
-                    label2.Text = reader.GetString(0) + " (price:" + reader.GetString(1) + ")";
+                    label2.Text = reader.GetString(0) + " (ціна:" + reader.GetString(1) + ")";
                     label3.Text = reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4);
-                    label4.Text = reader.GetString(5) + " (address:" + reader.GetString(6) + ")";
+                    label4.Text = reader.GetString(5) + " (адреса:" + reader.GetString(6) + ")";
                     label5.Text = reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9);
                     label6.Text = reader.GetString(10);
                     richTextBox1.Text = reader.GetString(11);
@@ -66,7 +66,7 @@ namespace DIploma_repair.User
                 reader.Close();
 
                 listBox1.Items.Clear();
-                listBox1.Items.Add("Name -> Country producer -> Price");
+                listBox1.Items.Add("Назва -> Країна-виробник -> Ціна");
                 cmd2 = new MySqlCommand
                 {
                     Connection = conn,

@@ -29,7 +29,7 @@ namespace DIploma_repair.Admin
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "yyy:MM:dd";
+            dateTimePicker1.CustomFormat = "yyy-MM-dd";
             dateTimePicker1.Visible = false;
         }
 
@@ -45,16 +45,16 @@ namespace DIploma_repair.Admin
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "ID";
-                dataGridView1.Columns[1].HeaderText = "Detail name";
-                dataGridView1.Columns[2].HeaderText = "Producing country";
-                dataGridView1.Columns[3].HeaderText = "Price";
-                dataGridView1.Columns[4].HeaderText = "Order date";
-                dataGridView1.Columns[5].HeaderText = "Number of parts";
-                dataGridView1.Columns[6].HeaderText = "Wizard surname";
-                dataGridView1.Columns[7].HeaderText = "Wizard name";
-                dataGridView1.Columns[8].HeaderText = "Order status";
-
+                dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
+                dataGridView1.Columns[1].HeaderText = "Назва деталі";
+                dataGridView1.Columns[2].HeaderText = "Країна-виробник";
+                dataGridView1.Columns[3].HeaderText = "Ціна";
+                dataGridView1.Columns[4].HeaderText = "Дата замовлення";
+                dataGridView1.Columns[5].HeaderText = "Кількість деталей";
+                dataGridView1.Columns[6].HeaderText = "Прізвище майстра";
+                dataGridView1.Columns[7].HeaderText = "Ім'я майстра";
+                dataGridView1.Columns[8].HeaderText = "Статус замовлення";
+               
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 ReColorGrid();
@@ -106,10 +106,10 @@ namespace DIploma_repair.Admin
         {
             textBox1.Text = dateTimePicker1.Text;
         }
-
+       
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString().Contains("date"))
+            if (comboBox1.SelectedItem.ToString().Contains("Дата"))
             {
                 dateTimePicker1.Visible = true;
             }
@@ -133,15 +133,15 @@ namespace DIploma_repair.Admin
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells[0].ReadOnly = true;
                 /////columns names
-                dataGridView1.Columns[0].HeaderText = "ID";
-                dataGridView1.Columns[1].HeaderText = "Detail name";
-                dataGridView1.Columns[2].HeaderText = "Producing country";
-                dataGridView1.Columns[3].HeaderText = "Price";
-                dataGridView1.Columns[4].HeaderText = "Order date";
-                dataGridView1.Columns[5].HeaderText = "Number of parts";
-                dataGridView1.Columns[6].HeaderText = "Wizard surname";
-                dataGridView1.Columns[7].HeaderText = "Wizard name";
-                dataGridView1.Columns[8].HeaderText = "Order status";
+                dataGridView1.Columns[0].HeaderText = "Ідентифікатор";
+                dataGridView1.Columns[1].HeaderText = "Назва деталі";
+                dataGridView1.Columns[2].HeaderText = "Країна-виробник";
+                dataGridView1.Columns[3].HeaderText = "Ціна";
+                dataGridView1.Columns[4].HeaderText = "Дата замовлення";
+                dataGridView1.Columns[5].HeaderText = "Кількість деталей";
+                dataGridView1.Columns[6].HeaderText = "Прізвище майстра";
+                dataGridView1.Columns[7].HeaderText = "Ім'я майстра";
+                dataGridView1.Columns[8].HeaderText = "Статус замовлення";
 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -182,9 +182,10 @@ namespace DIploma_repair.Admin
                         operation = " LIKE ";
                         break;
                 }
+              
                 switch (comboBox1.Text)
                 {
-                    case "Id":
+                    case "Ідентифікатор":
                         {
                             if(Search == "")
                             {
@@ -197,7 +198,7 @@ namespace DIploma_repair.Admin
                            
                             break;
                         }
-                    case "Item name":
+                    case "Назва деталі":
                         {
                             if(Search == "")
                             {
@@ -209,7 +210,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Producing country":
+                    case "Країна-виробник":
                         {
                             if (Search == "")
                             {
@@ -221,7 +222,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Price":
+                    case "Ціна":
                         {
                             if (Search == "")
                             {
@@ -233,7 +234,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Order date":
+                    case "Дата замовлення":
                         {
                             if (Search == "")
                             {
@@ -245,7 +246,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Number of parts":
+                    case "Кількість деталей":
                         {
                             if (Search == "")
                             {
@@ -257,7 +258,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "The surname of the wizard":
+                    case "Прізвище майстра":
                         {
                             if (Search == "")
                             {
@@ -269,7 +270,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "The name of the wizard":
+                    case "Ім'я майстра":
                         {
                             if (Search == "")
                             {
@@ -281,7 +282,7 @@ namespace DIploma_repair.Admin
                             }
                             break;
                         }
-                    case "Order status":
+                    case "Статус замовлення":
                         {
                             if (Search == "")
                             {
@@ -304,6 +305,7 @@ namespace DIploma_repair.Admin
         private void Button3_Click(object sender, EventArgs e)
         {
             DetailOrderList_Load(null, null);
+            Search = "";
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -354,11 +356,11 @@ namespace DIploma_repair.Admin
                 streamWriter.Close();
                 fs.Close();
 
-                MessageBox.Show("File saved successfully");
+                MessageBox.Show("Файл збережено!");
             }
             catch
             {
-                MessageBox.Show("Saving file Error!");
+                MessageBox.Show("ПОмилка збереження файлу!");
             }
         }
 
@@ -428,11 +430,11 @@ namespace DIploma_repair.Admin
 
                 doc.Close();
 
-                MessageBox.Show("Pdf-document saved!");
+                MessageBox.Show("Pdf-документ збережено!");
             }
             catch (Exception)
             {
-                MessageBox.Show("Problems with saving to PDF format!");
+                MessageBox.Show("Проблеми конвертації до PDF формату!");
             }
         }
 
@@ -520,7 +522,7 @@ namespace DIploma_repair.Admin
             }
             catch
             {
-                MessageBox.Show("Printing Error!");
+                MessageBox.Show("Помилка принтера!");
             }
         }
 

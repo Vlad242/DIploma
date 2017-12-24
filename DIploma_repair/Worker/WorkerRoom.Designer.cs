@@ -58,11 +58,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(211, 220);
+            this.button1.Location = new System.Drawing.Point(199, 220);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 74);
+            this.button1.Size = new System.Drawing.Size(65, 74);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Update";
+            this.button1.Text = "Оновити";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -72,10 +72,10 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(0, 216);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(205, 78);
+            this.groupBox3.Size = new System.Drawing.Size(193, 78);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Order count";
+            this.groupBox3.Text = "Загальна кількість замовлень";
             // 
             // label8
             // 
@@ -111,21 +111,21 @@
             this.провестиЗаняттяToolStripMenuItem,
             this.новеЗамовленняToolStripMenuItem});
             this.діїToolStripMenuItem.Name = "діїToolStripMenuItem";
-            this.діїToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.діїToolStripMenuItem.Text = "Action";
+            this.діїToolStripMenuItem.Size = new System.Drawing.Size(33, 20);
+            this.діїToolStripMenuItem.Text = "Дії";
             // 
             // провестиЗаняттяToolStripMenuItem
             // 
             this.провестиЗаняттяToolStripMenuItem.Name = "провестиЗаняттяToolStripMenuItem";
-            this.провестиЗаняттяToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.провестиЗаняттяToolStripMenuItem.Text = "Order list";
+            this.провестиЗаняттяToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.провестиЗаняттяToolStripMenuItem.Text = "Список замовлень";
             this.провестиЗаняттяToolStripMenuItem.Click += new System.EventHandler(this.OrderList);
             // 
             // новеЗамовленняToolStripMenuItem
             // 
             this.новеЗамовленняToolStripMenuItem.Name = "новеЗамовленняToolStripMenuItem";
-            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.новеЗамовленняToolStripMenuItem.Text = "Order detail";
+            this.новеЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.новеЗамовленняToolStripMenuItem.Text = "Замовлення деталей";
             this.новеЗамовленняToolStripMenuItem.Click += new System.EventHandler(this.OrderDetail);
             // 
             // вийтиToolStripMenuItem
@@ -134,21 +134,21 @@
             this.зобліковогоЗаписуToolStripMenuItem,
             this.зПрограмиToolStripMenuItem});
             this.вийтиToolStripMenuItem.Name = "вийтиToolStripMenuItem";
-            this.вийтиToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.вийтиToolStripMenuItem.Text = "Quit";
+            this.вийтиToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.вийтиToolStripMenuItem.Text = "Вихід";
             // 
             // зобліковогоЗаписуToolStripMenuItem
             // 
             this.зобліковогоЗаписуToolStripMenuItem.Name = "зобліковогоЗаписуToolStripMenuItem";
-            this.зобліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.зобліковогоЗаписуToolStripMenuItem.Text = "Logout";
+            this.зобліковогоЗаписуToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.зобліковогоЗаписуToolStripMenuItem.Text = "З облікового запису";
             this.зобліковогоЗаписуToolStripMenuItem.Click += new System.EventHandler(this.Logout);
             // 
             // зПрограмиToolStripMenuItem
             // 
             this.зПрограмиToolStripMenuItem.Name = "зПрограмиToolStripMenuItem";
-            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.зПрограмиToolStripMenuItem.Text = "Exit";
+            this.зПрограмиToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.зПрограмиToolStripMenuItem.Text = "З програми";
             this.зПрограмиToolStripMenuItem.Click += new System.EventHandler(this.Exit);
             // 
             // dataGridView1
@@ -169,7 +169,7 @@
             this.groupBox2.Size = new System.Drawing.Size(677, 267);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Orders";
+            this.groupBox2.Text = "Замовлення";
             // 
             // label7
             // 
@@ -193,7 +193,7 @@
             this.groupBox1.Size = new System.Drawing.Size(264, 183);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User infirmation";
+            this.groupBox1.Text = "Інформація корствача";
             // 
             // label3
             // 
@@ -256,7 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "WorkerRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WorkerRoom";
+            this.Text = "Кабінет працівника";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkerRoom_FormClosing);
             this.Load += new System.EventHandler(this.WorkerRoom_Load);
             this.groupBox3.ResumeLayout(false);

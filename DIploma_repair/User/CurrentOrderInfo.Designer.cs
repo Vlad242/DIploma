@@ -90,7 +90,7 @@
             this.groupBox1.Size = new System.Drawing.Size(531, 384);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General";
+            this.groupBox1.Text = "Загальна інформація";
             // 
             // label22
             // 
@@ -322,7 +322,7 @@
             this.groupBox2.Size = new System.Drawing.Size(265, 384);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Details";
+            this.groupBox2.Text = "Деталі";
             // 
             // CurrentOrderInfo
             // 

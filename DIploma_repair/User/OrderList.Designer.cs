@@ -69,7 +69,7 @@
             this.groupBox1.Size = new System.Drawing.Size(710, 108);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SEARCH";
+            this.groupBox1.Text = "Пошук";
             // 
             // button4
             // 
@@ -143,12 +143,12 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Order ID",
-            "Service name",
-            "Producer",
-            "Model",
-            "Date",
-            "Status"});
+            "Ідентифікатор",
+            "Сервіс",
+            "Виробник",
+            "Модель",
+            "Дата",
+            "Статус"});
             this.comboBox1.Location = new System.Drawing.Point(6, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
@@ -170,7 +170,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 98);
             this.button1.TabIndex = 43;
-            this.button1.Text = "View detail";
+            this.button1.Text = "Деталі";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -186,7 +186,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "OrderList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Order list";
+            this.Text = "Список замовлень";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderList_FormClosing);
             this.Load += new System.EventHandler(this.OrderList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -51,10 +51,10 @@ namespace DIploma_repair.Admin
                 MySqlDataReader reader = cmd2.ExecuteReader();
                 while (reader.Read())
                 {
-                    this.Text = "Administrator " + reader.GetString(1) + " " + reader.GetString(0);
-                    label8.Text = "Name: " + reader.GetString(0);
-                    label9.Text = "Surname: " + reader.GetString(1);
-                    label10.Text = "Father name: " + reader.GetString(2);
+                    this.Text = "Адміністратор " + reader.GetString(1) + " " + reader.GetString(0);
+                    label8.Text = "Ім'я: " + reader.GetString(0);
+                    label9.Text = "Прізвище: " + reader.GetString(1);
+                    label10.Text = "По батькові: " + reader.GetString(2);
                     label11.Text = "E-mail: " + reader.GetString(3);
                 }
                 reader.Close();
@@ -84,7 +84,7 @@ namespace DIploma_repair.Admin
                     while (reader2.Read())
                     {
                         count.Add(reader2.GetString(0));
-                        listBox1.Items.Add("Order with status '" + item + "' - " + reader2.GetString(0));
+                        listBox1.Items.Add("Замовлення зі статусом '" + item + "' - " + reader2.GetString(0));
                     }
                     reader2.Close();
                 }
