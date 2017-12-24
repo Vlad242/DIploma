@@ -58,7 +58,7 @@ namespace DIploma_repair.Mailer
                 cmd = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT Status.Status_name, Service.Service_name, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Complete_set, Worker.Worker_surname,Worker.Worker_name,Worker.Worker_fname, Orders.Order_price, Orders.Order_Date, Worker.Phone, Office.Address, Office.Office_name FROM Orders INNER JOIN Service on(Service.Service_id=Orders.Service_id) INNER JOIN Model on(Model.Model_id=Orders.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Item.M_id=Manufacturer.M_id) INNER JOIN Serial on(Model.Model_id=Serial.Model_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) INNER JOIN Worker on(Orders.Worker_id=Worker.Worker_id) INNER JOIN Office on(Office.Office_id=Worker.Office_id) WHERE Orders.Order_id=" + order_id + ";")
+                    CommandText = string.Format("SELECT Status.Status_name, Service.Service_name, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Complete_set, Worker.Worker_surname,Worker.Worker_name,Worker.Worker_fname, Orders.Order_price, Orders.Order_Date, Worker.Phone, Office.Address, Office.Office_name FROM Orders INNER JOIN Service on(Service.Service_id=Orders.Service_id) INNER JOIN Serial on(Orders.Serial_number=Serial.Serial_number)  INNER JOIN Model on(Serial.Model_id=Model.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Item.M_id=Manufacturer.M_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) INNER JOIN Worker on(Orders.Worker_id=Worker.Worker_id) INNER JOIN Office on(Office.Office_id=Worker.Office_id) WHERE Orders.Order_id=" + order_id + ";")
                 };
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -90,7 +90,7 @@ namespace DIploma_repair.Mailer
                 cmd = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT  Detail.Detail_name, Detail.Prod_country, Detail.Price FROM Detail INNER JOIN is_for on(Detail.Detail_id=is_for.Detail_id) WHERE is_for.Order_id=" + order_id + ";")
+                    CommandText = string.Format("SELECT Detail.Detail_name, Detail.Prod_country, Detail.Price FROM Detail INNER JOIN is_for on(Detail.Detail_id=is_for.Detail_id) WHERE is_for.Order_id=" + order_id + ";")
                 };
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -116,7 +116,7 @@ namespace DIploma_repair.Mailer
                     "З повагою команда " + ComandName + " ! :)";
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
@@ -168,7 +168,7 @@ namespace DIploma_repair.Mailer
                 cmd = new MySqlCommand
                 {
                     Connection = conn,
-                    CommandText = string.Format("SELECT Status.Status_name, Service.Service_name, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Complete_set, Worker.Worker_surname,Worker.Worker_name,Worker.Worker_fname, Orders.Order_price, Orders.Order_Date, Worker.Phone, Office.Address, Office.Office_name FROM Orders INNER JOIN Service on(Service.Service_id=Orders.Service_id) INNER JOIN Model on(Model.Model_id=Orders.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Item.M_id=Manufacturer.M_id) INNER JOIN Serial on(Model.Model_id=Serial.Model_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) INNER JOIN Worker on(Orders.Worker_id=Worker.Worker_id) INNER JOIN Office on(Office.Office_id=Worker.Office_id) WHERE Orders.Order_id=" + order_id + ";")
+                    CommandText = string.Format("SELECT Status.Status_name, Service.Service_name, Item.Item_name, Manufacturer.M_name, Model.Model_name, Serial.Serial_number, Orders.Complete_set, Worker.Worker_surname,Worker.Worker_name,Worker.Worker_fname, Orders.Order_price, Orders.Order_Date, Worker.Phone, Office.Address, Office.Office_name FROM Orders INNER JOIN Service on(Service.Service_id=Orders.Service_id) INNER JOIN Serial on(Orders.Serial_number=Serial.Serial_number) INNER JOIN Model on(Model.Model_id=Serial.Model_id) INNER JOIN Item on(Model.Item_id=Item.Item_id) INNER JOIN Manufacturer on(Item.M_id=Manufacturer.M_id) INNER JOIN Status on(Status.Status_id=Orders.Status_id) INNER JOIN Worker on(Orders.Worker_id=Worker.Worker_id) INNER JOIN Office on(Office.Office_id=Worker.Office_id) WHERE Orders.Order_id=" + order_id + ";")
                 };
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
